@@ -1,0 +1,26 @@
+---
+interface Props {
+  date: string;
+  generated: string;
+  domains_count: number;
+}
+
+const { date, generated, domains_count } = Astro.props;
+---
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+  <div class="bg-background border border-neutral-dark/30 rounded-lg p-4">
+    <div class="text-neutral-dark text-sm mb-1">Date</div>
+    <div class="text-primary text-xl font-mono">{date}</div>
+  </div>
+  
+  <div class="bg-background border border-neutral-dark/30 rounded-lg p-4">
+    <div class="text-neutral-dark text-sm mb-1">Research Domains</div>
+    <div class="text-primary text-xl font-bold">{domains_count}</div>
+  </div>
+  
+  <div class="bg-background border border-neutral-dark/30 rounded-lg p-4">
+    <div class="text-neutral-dark text-sm mb-1">Generated</div>
+    <div class="text-primary text-xl font-mono text-sm">{generated}</div>
+  </div>
+</div>
