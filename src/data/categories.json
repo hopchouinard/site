@@ -1,0 +1,45 @@
+{
+  "AI Trends": [
+    "AI",
+    "Machine Learning",
+    "Neural Networks",
+    "LLM",
+    "Generative",
+    "GPT",
+    "Claude",
+    "Gemini"
+  ],
+  "Market Analysis": [
+    "Funding",
+    "Startups",
+    "Investment",
+    "Market",
+    "Valuation",
+    "IPO",
+    "Acquisition"
+  ],
+  "Regulation": [
+    "Policy",
+    "Ethics",
+    "Governance",
+    "Compliance",
+    "Privacy",
+    "GDPR",
+    "Regulation"
+  ],
+  "Strategy": [
+    "Business",
+    "Competitive",
+    "Strategic",
+    "Planning",
+    "Enterprise"
+  ],
+  "Tooling": [
+    "Development",
+    "Infrastructure",
+    "Tools",
+    "Framework",
+    "Platform",
+    "DevOps"
+  ]
+}

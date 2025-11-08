@@ -1,0 +1,23 @@
+<svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Neural network helix icon -->
+  <g transform="translate(0, 5)">
+    <!-- Helix strands -->
+    <path d="M8 5 Q12 10, 8 15 Q4 20, 8 25" stroke="#8b5cf6" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M12 5 Q8 10, 12 15 Q16 20, 12 25" stroke="#a78bfa" stroke-width="2" fill="none" stroke-linecap="round"/>
+    
+    <!-- Neural nodes -->
+    <circle cx="8" cy="5" r="2" fill="#8b5cf6"/>
+    <circle cx="12" cy="5" r="2" fill="#a78bfa"/>
+    <circle cx="10" cy="10" r="2" fill="#c4b5fd"/>
+    <circle cx="8" cy="15" r="2" fill="#8b5cf6"/>
+    <circle cx="12" cy="15" r="2" fill="#a78bfa"/>
+    <circle cx="10" cy="20" r="2" fill="#c4b5fd"/>
+    <circle cx="8" cy="25" r="2" fill="#8b5cf6"/>
+    <circle cx="12" cy="25" r="2" fill="#a78bfa"/>
+  </g>
+  
+  <!-- Wordmark -->
+  <text x="26" y="24" font-family="'Fira Code', monospace" font-size="16" font-weight="600" fill="#e5e5e5">
+    NeuroHelix
+  </text>
+</svg>

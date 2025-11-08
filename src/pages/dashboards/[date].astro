@@ -20,64 +20,233 @@ const { Content } = await dashboard.render();
     <a href="/" class="text-primary hover:underline mb-4 inline-block">&larr; Back to Dashboards</a>
   </div>
 
-  <article class="prose prose-invert prose-violet max-w-none">
-    <h1 class="text-4xl font-bold text-neutral mb-2">{dashboard.data.title}</h1>
-    
-    <KPIRow 
-      date={dashboard.data.date}
-      generated={dashboard.data.generated}
-      domains_count={dashboard.data.domains_count}
-    />
-
-    {dashboard.data.tags.length > 0 && (
-      <div class="flex flex-wrap gap-2 mb-8">
-        {dashboard.data.tags.map(tag => (
-          <span class="text-xs px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">
-            {tag}
-          </span>
-        ))}
-      </div>
-    )}
-
-    <div class="bg-background border border-primary/30 rounded-lg p-6 mb-8">
-      <h2 class="text-2xl font-bold text-primary mb-4">Executive Summary</h2>
-      <p class="text-neutral-dark leading-relaxed">{dashboard.data.summary}</p>
+<div class="dashboard-header">
+  <h1 class="dashboard-title">{dashboard.data.title}</h1>
+  
+  <KPIRow 
+    date={new Date(dashboard.data.date)}
+    domains_count={dashboard.data.domains_count}
+    generated={new Date(dashboard.data.generated)}
+  />
+  
+  {dashboard.data.tags && dashboard.data.tags.length > 0 && (
+    <div class="tag-list">
+      {dashboard.data.tags.map((tag: string) => (
+        <span class="tag-chip">{tag}</span>
+      ))}
     </div>
+  )}
+  
+  {dashboard.data.categories && dashboard.data.categories.length > 0 && (
+    <div class="category-list">
+      {dashboard.data.categories.map((category: string) => (
+        <span class="category-chip">{category}</span>
+      ))}
+    </div>
+  )}
+</div>
 
-    {dashboard.data.sections.map(section => (
-      <div class="bg-background border border-neutral-dark/30 rounded-lg p-6 mb-6">
-        <h2 class="text-2xl font-bold text-neutral mb-4">{section.heading}</h2>
-        <div class="text-neutral-dark leading-relaxed whitespace-pre-wrap">{section.content}</div>
-      </div>
-    ))}
+<!-- Full Markdown Content with styled sections -->
+<article class="markdown-content report-sections">
+  <Content />
+</article>
 
-    {dashboard.data.notable_developments.length > 0 && (
-      <div class="bg-background border border-primary/30 rounded-lg p-6 mb-6">
-        <h2 class="text-2xl font-bold text-primary mb-4">Notable Developments</h2>
-        <ul class="list-disc list-inside space-y-2 text-neutral-dark">
-          {dashboard.data.notable_developments.map(item => (
-            <li>{item}</li>
-          ))}
-        </ul>
-      </div>
-    )}
-
-    {dashboard.data.strategic_implications && (
-      <div class="bg-background border border-neutral-dark/30 rounded-lg p-6 mb-6">
-        <h2 class="text-2xl font-bold text-neutral mb-4">Strategic Implications</h2>
-        <p class="text-neutral-dark leading-relaxed whitespace-pre-wrap">{dashboard.data.strategic_implications}</p>
-      </div>
-    )}
-
-    {dashboard.data.recommendations.length > 0 && (
-      <div class="bg-background border border-primary/30 rounded-lg p-6">
-        <h2 class="text-2xl font-bold text-primary mb-4">Actionable Recommendations</h2>
-        <ol class="list-decimal list-inside space-y-3 text-neutral-dark">
-          {dashboard.data.recommendations.map(rec => (
-            <li class="leading-relaxed">{rec}</li>
-          ))}
-        </ol>
-      </div>
-    )}
-  </article>
+<!-- Report Metadata at the end -->
+<div class="report-metadata">
+  <h2>Report Metadata</h2>
+  <div class="metadata-grid">
+    <div class="metadata-item">
+      <div class="metadata-label">Date</div>
+      <div class="metadata-value">{dashboard.data.date}</div>
+    </div>
+    <div class="metadata-item">
+      <div class="metadata-label">Generated</div>
+      <div class="metadata-value">{dashboard.data.generated}</div>
+    </div>
+    <div class="metadata-item">
+      <div class="metadata-label">Research Domains</div>
+      <div class="metadata-value">{dashboard.data.domains_count}</div>
+    </div>
+    <div class="metadata-item">
+      <div class="metadata-label">Analysis Type</div>
+      <div class="metadata-value">AI-Synthesized Cross-Domain Analysis</div>
+    </div>
+  </div>
+</div>
 </BaseLayout>
+
+<script>
+  // Wrap each major section (h3) with its content in a styled box
+  document.addEventListener('DOMContentLoaded', () => {
+    const article = document.querySelector('.report-sections');
+    if (!article) return;
+    
+    const h3Elements = article.querySelectorAll('h3');
+    
+    h3Elements.forEach((h3) => {
+      // Create wrapper div
+      const wrapper = document.createElement('div');
+      wrapper.className = 'section-box';
+      
+      // Insert wrapper before h3
+      h3.parentNode.insertBefore(wrapper, h3);
+      
+      // Move h3 into wrapper
+      wrapper.appendChild(h3);
+      
+      // Move all siblings until next h3 or end
+      let nextElement = wrapper.nextElementSibling;
+      while (nextElement && nextElement.tagName !== 'H3' && nextElement.tagName !== 'H2') {
+        const elementToMove = nextElement;
+        nextElement = nextElement.nextElementSibling;
+        wrapper.appendChild(elementToMove);
+      }
+    });
+  });
+</script>
+
+<style>
+  /* Dashboard header */
+  .dashboard-header {
+    margin-bottom: var(--space-6);
+  }
+  
+  .dashboard-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-4xl);
+    font-weight: var(--font-bold);
+    color: var(--color-text-primary);
+    margin: 0 0 var(--space-4) 0;
+    padding-bottom: var(--space-4);
+    border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+  }
+  
+  .tag-list,
+  .category-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin: var(--space-4) 0;
+  }
+  
+  .tag-chip {
+    font-size: var(--text-xs);
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: rgba(139, 92, 246, 0.1);
+    color: var(--color-accent);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+  }
+  
+  .category-chip {
+    font-size: var(--text-xs);
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: rgba(251, 191, 36, 0.1);
+    color: #fbbf24;
+    border: 1px solid rgba(251, 191, 36, 0.2);
+  }
+  
+  /* Style major report sections with purple boxes */
+  :global(.section-box) {
+    background: var(--color-surface);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    margin: var(--space-6) 0;
+  }
+  
+  :global(.section-box h3) {
+    color: var(--color-accent);
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    margin: 0 0 var(--space-4) 0;
+    padding: 0;
+    border: none;
+  }
+  
+  :global(.section-box h4) {
+    color: var(--color-text-primary);
+    font-size: var(--text-xl);
+    font-weight: var(--font-semibold);
+    margin: var(--space-4) 0 var(--space-3) 0;
+    padding: 0;
+    border: none;
+  }
+  
+  :global(.section-box p),
+  :global(.section-box ul),
+  :global(.section-box ol) {
+    margin: var(--space-3) 0;
+  }
+  
+  :global(.section-box ul),
+  :global(.section-box ol) {
+    padding-left: var(--space-6);
+  }
+  
+  :global(.section-box li) {
+    margin: var(--space-2) 0;
+  }
+  
+  /* Report Metadata Section */
+  .report-metadata {
+    margin-top: var(--space-8);
+    padding: var(--space-6);
+    background: var(--color-surface);
+    border: 1px solid rgba(139, 92, 246, 0.1);
+    border-radius: var(--radius-lg);
+  }
+  
+  .report-metadata h2 {
+    color: var(--color-accent);
+    font-size: var(--text-xl);
+    margin: 0 0 var(--space-4) 0;
+    border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+    padding-bottom: var(--space-3);
+  }
+  
+  .metadata-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-4);
+  }
+  
+  .metadata-item {
+    padding: var(--space-3);
+    background: rgba(139, 92, 246, 0.05);
+    border-radius: var(--radius-md);
+  }
+  
+  .metadata-label {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-1);
+  }
+  
+  .metadata-value {
+    font-size: var(--text-base);
+    color: var(--color-text-primary);
+    font-weight: var(--font-semibold);
+  }
+  
+  /* Ensure KPIRow has proper spacing */
+  :global(.kpi-row) {
+    margin: var(--space-4) 0;
+  }
+  
+  /* Ensure proper spacing for markdown content */
+  .markdown-content :global(h1:first-child) {
+    display: none; /* Hide the duplicate h1 from markdown */
+  }
+  
+  .markdown-content {
+    margin-top: var(--space-6);
+  }
+  
+  @media (max-width: 640px) {
+    .dashboard-title {
+      font-size: var(--text-3xl);
+    }
+  }
+</style>

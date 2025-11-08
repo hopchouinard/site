@@ -1,0 +1,396 @@
+/**
+ * GitHub-Style Markdown Rendering
+ * 
+ * This stylesheet provides beautiful, GitHub-inspired formatting for markdown content.
+ * Uses Fira Code for headings and code, with proper spacing and hierarchy.
+ */
+
+.markdown-content {
+  /* ========================================
+     Typography Hierarchy
+     ======================================== */
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    line-height: var(--leading-tight);
+    margin-top: var(--space-8);
+    margin-bottom: var(--space-4);
+    color: var(--color-text-primary);
+    font-weight: var(--font-semibold);
+  }
+  
+  h1 {
+    font-size: var(--text-4xl);
+    margin-top: 0;
+    padding-bottom: var(--space-4);
+    border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+  }
+  
+  h2 {
+    font-size: var(--text-3xl);
+    margin-top: var(--space-8);
+    padding-bottom: var(--space-3);
+    border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+  }
+  
+  h3 {
+    font-size: var(--text-2xl);
+  }
+  
+  h4 {
+    font-size: var(--text-xl);
+  }
+  
+  h5 {
+    font-size: var(--text-lg);
+  }
+  
+  h6 {
+    font-size: var(--text-base);
+    color: var(--color-text-secondary);
+  }
+  
+  /* ========================================
+     Paragraphs and Text
+     ======================================== */
+  
+  p {
+    margin-bottom: var(--space-4);
+    line-height: var(--leading-relaxed);
+    color: var(--color-text-secondary);
+  }
+  
+  strong, b {
+    font-weight: var(--font-semibold);
+    color: var(--color-text-primary);
+  }
+  
+  em, i {
+    font-style: italic;
+  }
+  
+  /* ========================================
+     Links
+     ======================================== */
+  
+  a {
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+  
+  a:hover {
+    color: rgba(139, 92, 246, 0.8);
+    text-decoration: underline;
+  }
+  
+  /* Anchor links for headings (GitHub-style) */
+  h2 a, h3 a, h4 a, h5 a, h6 a {
+    color: inherit;
+    text-decoration: none;
+    position: relative;
+  }
+  
+  /* Add link icon on hover */
+  .heading-anchor::before {
+    content: '#';
+    position: absolute;
+    left: -1.5em;
+    color: var(--color-accent);
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+    font-weight: normal;
+    padding-right: 0.5em;
+  }
+  
+  h2:hover .heading-anchor::before,
+  h3:hover .heading-anchor::before,
+  h4:hover .heading-anchor::before,
+  h5:hover .heading-anchor::before,
+  h6:hover .heading-anchor::before,
+  .heading-anchor:focus::before {
+    opacity: 1;
+  }
+  
+  h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+  
+  /* Smooth scroll behavior for anchor links */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* ========================================
+     Code Blocks and Inline Code
+     ======================================== */
+  
+  code {
+    font-family: var(--font-code);
+    font-size: var(--text-sm);
+  }
+  
+  /* Inline code */
+  p code,
+  li code,
+  td code,
+  th code {
+    background: var(--color-surface);
+    padding: 2px 6px;
+    border-radius: var(--radius-sm);
+    color: var(--color-accent);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+  }
+  
+  /* Code blocks */
+  pre {
+    background: #0f172a;
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    border-radius: var(--radius-md);
+    padding: var(--space-4);
+    overflow-x: auto;
+    margin: var(--space-4) 0;
+    line-height: 1.6;
+  }
+  
+  pre code {
+    background: none;
+    padding: 0;
+    border: none;
+    color: #e5e7eb;
+    font-size: var(--text-sm);
+  }
+  
+  /* ========================================
+     Lists
+     ======================================== */
+  
+  ul, ol {
+    margin: var(--space-4) 0;
+    padding-left: var(--space-6);
+    color: var(--color-text-secondary);
+  }
+  
+  li {
+    margin-bottom: var(--space-2);
+    line-height: var(--leading-relaxed);
+  }
+  
+  /* Nested lists */
+  li > ul,
+  li > ol {
+    margin-top: var(--space-2);
+    margin-bottom: var(--space-2);
+  }
+  
+  /* Task lists */
+  input[type="checkbox"] {
+    margin-right: var(--space-2);
+  }
+  
+  /* ========================================
+     Tables
+     ======================================== */
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--space-4) 0;
+    overflow-x: auto;
+    display: block;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(163, 163, 163, 0.2);
+  }
+  
+  thead {
+    background: var(--color-surface);
+  }
+  
+  th, td {
+    border: 1px solid rgba(163, 163, 163, 0.2);
+    padding: var(--space-2) var(--space-3);
+    text-align: left;
+  }
+  
+  th {
+    font-weight: var(--font-semibold);
+    color: var(--color-text-primary);
+  }
+  
+  td {
+    color: var(--color-text-secondary);
+  }
+  
+  tbody tr:nth-child(even) {
+    background: rgba(26, 26, 26, 0.5);
+  }
+  
+  tbody tr:hover {
+    background: rgba(139, 92, 246, 0.05);
+  }
+  
+  /* ========================================
+     Blockquotes
+     ======================================== */
+  
+  blockquote {
+    border-left: 4px solid var(--color-accent);
+    padding-left: var(--space-4);
+    margin: var(--space-4) 0;
+    color: var(--color-text-muted);
+    font-style: italic;
+  }
+  
+  blockquote p {
+    margin-bottom: var(--space-2);
+  }
+  
+  blockquote > *:first-child {
+    margin-top: 0;
+  }
+  
+  blockquote > *:last-child {
+    margin-bottom: 0;
+  }
+  
+  /* ========================================
+     Horizontal Rules
+     ======================================== */
+  
+  hr {
+    border: none;
+    border-top: 1px solid rgba(139, 92, 246, 0.2);
+    margin: var(--space-8) 0;
+  }
+  
+  /* ========================================
+     Images
+     ======================================== */
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+    margin: var(--space-4) 0;
+  }
+  
+  /* ========================================
+     Callouts / Admonitions
+     ======================================== */
+  
+  .callout {
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+    margin: var(--space-4) 0;
+    border-left: 4px solid;
+  }
+  
+  .callout-note {
+    background: rgba(59, 130, 246, 0.1);
+    border-color: #3b82f6;
+  }
+  
+  .callout-warning {
+    background: rgba(245, 158, 11, 0.1);
+    border-color: #f59e0b;
+  }
+  
+  .callout-danger {
+    background: rgba(239, 68, 68, 0.1);
+    border-color: #ef4444;
+  }
+  
+  .callout-success {
+    background: rgba(16, 185, 129, 0.1);
+    border-color: #10b981;
+  }
+  
+  /* ========================================
+     Definition Lists
+     ======================================== */
+  
+  dl {
+    margin: var(--space-4) 0;
+  }
+  
+  dt {
+    font-weight: var(--font-semibold);
+    color: var(--color-text-primary);
+    margin-top: var(--space-3);
+  }
+  
+  dd {
+    margin-left: var(--space-6);
+    margin-bottom: var(--space-2);
+    color: var(--color-text-secondary);
+  }
+  
+  /* ========================================
+     Details / Summary
+     ======================================== */
+  
+  details {
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    border-radius: var(--radius-md);
+    padding: var(--space-4);
+    margin: var(--space-4) 0;
+  }
+  
+  summary {
+    cursor: pointer;
+    font-weight: var(--font-semibold);
+    color: var(--color-text-primary);
+    user-select: none;
+  }
+  
+  summary:hover {
+    color: var(--color-accent);
+  }
+  
+  details[open] summary {
+    margin-bottom: var(--space-3);
+  }
+  
+  /* ========================================
+     Footnotes
+     ======================================== */
+  
+  .footnotes {
+    margin-top: var(--space-12);
+    padding-top: var(--space-6);
+    border-top: 1px solid rgba(139, 92, 246, 0.2);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+  }
+  
+  .footnotes ol {
+    padding-left: var(--space-4);
+  }
+  
+  /* ========================================
+     Responsive Adjustments
+     ======================================== */
+  
+  @media (max-width: 640px) {
+    h1 {
+      font-size: var(--text-3xl);
+    }
+    
+    h2 {
+      font-size: var(--text-2xl);
+    }
+    
+    h3 {
+      font-size: var(--text-xl);
+    }
+    
+    pre {
+      font-size: 0.8125rem;
+    }
+    
+    table {
+      font-size: var(--text-sm);
+    }
+  }
+}

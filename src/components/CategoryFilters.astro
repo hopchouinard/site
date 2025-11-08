@@ -1,0 +1,101 @@
+---
+interface Category {
+  id: string;
+  label: string;
+  icon: string; // emoji or icon name
+  selected: boolean;
+}
+
+interface Props {
+  categories: Category[];
+}
+
+const { categories } = Astro.props;
+---
+
+<div class="category-filters">
+  <h3>Filter by Category</h3>
+  <div class="categories" role="group" aria-label="Category filters">
+    {categories.map(cat => (
+      <button
+        class={`category-pill ${cat.selected ? 'active' : ''}`}
+        data-category={cat.id}
+        role="switch"
+        aria-checked={cat.selected}
+      >
+        <span class="icon">{cat.icon}</span>
+        <span class="label">{cat.label}</span>
+      </button>
+    ))}
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const pills = document.querySelectorAll('.category-pill');
+    pills.forEach(pill => {
+      pill.addEventListener('click', (e) => {
+        const categoryId = (e.currentTarget as HTMLElement).dataset.category;
+        window.dispatchEvent(new CustomEvent('category-filter-change', {
+          detail: { category: categoryId }
+        }));
+      });
+    });
+  });
+</script>
+
+<style>
+  .category-filters {
+    margin: var(--space-6) 0;
+  }
+  
+  .category-filters h3 {
+    font-size: 1rem;
+    margin-bottom: var(--space-3);
+    color: var(--color-text-primary);
+  }
+  
+  .categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin-top: var(--space-4);
+  }
+  
+  .category-pill {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-4);
+    background: var(--color-surface);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: var(--color-text-secondary);
+  }
+  
+  .category-pill:hover {
+    background: rgba(139, 92, 246, 0.1);
+    border-color: var(--color-accent);
+  }
+  
+  .category-pill.active {
+    background: var(--color-accent);
+    color: white;
+    border-color: var(--color-accent);
+  }
+  
+  .category-pill:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+  
+  .icon {
+    font-size: 1.25em;
+  }
+  
+  .label {
+    font-weight: 500;
+  }
+</style>

@@ -10,6 +10,23 @@ export default defineConfig({
     format: 'directory'
   },
   site: 'https://neurohelix.patchoutech.com',
+  markdown: {
+    shikiConfig: {
+      theme: 'github-dark',
+      wrap: true,
+      langs: []
+    },
+    // Enable automatic heading IDs for anchor links
+    rehypePlugins: [
+      'rehype-slug',
+      ['rehype-autolink-headings', {
+        behavior: 'wrap',
+        properties: {
+          className: ['heading-anchor']
+        }
+      }]
+    ]
+  },
   vite: {
     plugins: [tailwindcss()]
   }
