@@ -1,18 +1,18 @@
 [
   {
-    "name": "OpenAI",
-    "count": 3
-  },
-  {
     "name": "Developer Tools",
     "count": 2
   },
   {
-    "name": "Open Source",
+    "name": "NVIDIA Blackwell",
     "count": 2
   },
   {
-    "name": "Google",
+    "name": "OpenAI",
+    "count": 2
+  },
+  {
+    "name": "Market Consolidation",
     "count": 2
   },
   {
@@ -24,10 +24,6 @@
     "count": 1
   },
   {
-    "name": "NVIDIA Blackwell",
-    "count": 1
-  },
-  {
     "name": "Google AI",
     "count": 1
   },
@@ -36,15 +32,19 @@
     "count": 1
   },
   {
+    "name": "Open Source",
+    "count": 1
+  },
+  {
     "name": "Autonomous Agents",
     "count": 1
   },
   {
-    "name": "Market Consolidation",
+    "name": "AI Regulation",
     "count": 1
   },
   {
-    "name": "AI Regulation",
+    "name": "Google",
     "count": 1
   },
   {
@@ -56,15 +56,23 @@
     "count": 1
   },
   {
-    "name": "Enterprise AI",
+    "name": "Compute Arms Race",
     "count": 1
   },
   {
-    "name": "Regulation",
+    "name": "Regulatory Gap",
     "count": 1
   },
   {
-    "name": "GitHub Copilot",
+    "name": "Google TPUs",
+    "count": 1
+  },
+  {
+    "name": "AI-Native Development",
+    "count": 1
+  },
+  {
+    "name": "Open Source AI",
     "count": 1
   }
 ]
