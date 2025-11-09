@@ -15,6 +15,8 @@ import MiniSearch from 'minisearch';
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 const PROJECT_ROOT = resolve(__dirname, '../..');
 const PUBLISHING_DIR = join(PROJECT_ROOT, 'data/publishing');
+const SOURCE_MANIFESTS_DIR = join(PROJECT_ROOT, 'data/publishing/source_manifests');
+const STATIC_SOURCE_DIR = join(PROJECT_ROOT, 'site/static/source');
 const PUBLIC_DIR = join(__dirname, '../public');
 
 console.log('🔍 Building search index...');
@@ -49,10 +51,10 @@ async function buildSearchIndex() {
 
   // Configure MiniSearch
   const miniSearch = new MiniSearch({
-    fields: ['date', 'title', 'summary', 'tags', 'full_text'],
-    storeFields: ['date', 'title', 'summary', 'permalink', 'tags'],
+    fields: ['date', 'title', 'summary', 'tags', 'full_text', 'path', 'artifactType', 'scope'],
+    storeFields: ['date', 'title', 'summary', 'permalink', 'tags', 'scope', 'path', 'artifactType', 'snippet'],
     searchOptions: {
-      boost: { title: 2, tags: 1.5 },
+      boost: { title: 2, tags: 1.5, path: 1.2 },
       fuzzy: 0.2
     }
   });
@@ -83,8 +85,63 @@ async function buildSearchIndex() {
       summary: payload.summary,
       tags: payload.tags?.join(' ') || '',
       full_text: full_text,
-      permalink: payload.permalink
+      permalink: payload.permalink,
+      scope: 'processed',
+      path: '',
+      artifactType: '',
+      snippet: payload.summary?.substring(0, 280) || ''
     });
+  }
+
+  // Index source artifacts from manifests
+  let manifestFiles = [];
+  try {
+    manifestFiles = await readdir(SOURCE_MANIFESTS_DIR);
+    manifestFiles = manifestFiles.filter(f => f.endsWith('.json'));
+  } catch (err) {
+    console.log('⚠️  No source manifests found, skipping source artifact indexing');
+  }
+
+  for (const manifestFile of manifestFiles) {
+    const manifestPath = join(SOURCE_MANIFESTS_DIR, manifestFile);
+    const manifestContent = await readFile(manifestPath, 'utf-8');
+    const manifest = JSON.parse(manifestContent);
+
+    for (const artifact of manifest.artifacts || []) {
+      // Read artifact content if it's a text file and under 200KB
+      let artifactContent = '';
+      if (artifact.sizeBytes && artifact.sizeBytes < 200000 &&
+          (artifact.mime?.startsWith('text/') || artifact.mime?.includes('json'))) {
+        try {
+          const artifactPath = join(STATIC_SOURCE_DIR, manifest.date, artifact.relativePath);
+          const fileContent = await readFile(artifactPath, 'utf-8');
+          // Truncate to 10KB for search index to avoid bloat
+          artifactContent = fileContent.substring(0, 10240);
+        } catch (err) {
+          // If file doesn't exist yet, use preview from manifest
+          artifactContent = artifact.preview || '';
+        }
+      } else {
+        artifactContent = artifact.preview || '';
+      }
+
+      // Create snippet from content or preview
+      const snippet = artifactContent.substring(0, 280) || artifact.preview || '';
+
+      documents.push({
+        id: `${manifest.date}::source::${artifact.relativePath}`,
+        date: manifest.date,
+        title: artifact.relativePath.split('/').pop() || artifact.relativePath,
+        summary: snippet,
+        tags: artifact.tags?.join(' ') || '',
+        full_text: artifactContent,
+        permalink: `/daily/${manifest.date}/source/${encodeURIComponent(artifact.relativePath)}`,
+        scope: 'source',
+        path: artifact.relativePath,
+        artifactType: artifact.artifactType,
+        snippet: snippet
+      });
+    }
   }
 
   // Add documents to index
@@ -92,13 +149,17 @@ async function buildSearchIndex() {
 
   // Export index
   const indexData = {
-    documents: documents.map(({ id, date, title, summary, permalink, tags }) => ({
+    documents: documents.map(({ id, date, title, summary, permalink, tags, scope, path, artifactType, snippet }) => ({
       id,
       date,
       title,
       summary,
       permalink,
-      tags: tags.split(' ').filter(Boolean)
+      tags: tags.split(' ').filter(Boolean),
+      scope,
+      path,
+      artifactType,
+      snippet
     })),
     index: miniSearch.toJSON()
   };

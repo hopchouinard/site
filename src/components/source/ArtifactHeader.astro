@@ -1,0 +1,341 @@
+---
+/**
+ * ArtifactHeader component - Display metadata and actions for a source artifact
+ * Shows: breadcrumbs, file info, artifact type, download button
+ */
+interface Props {
+  date: string;
+  relativePath: string;
+  artifactType: string;
+  displayGroup?: string;
+  sizeBytes: number;
+  checksum: string;
+  mime: string;
+  createdAt?: string;
+}
+
+const {
+  date,
+  relativePath,
+  artifactType,
+  displayGroup,
+  sizeBytes,
+  checksum,
+  mime,
+  createdAt
+} = Astro.props;
+
+// Format file size
+function formatBytes(bytes: number): string {
+  if (bytes === 0) return '0 B';
+  const k = 1024;
+  const sizes = ['B', 'KB', 'MB', 'GB'];
+  const i = Math.floor(Math.log(bytes) / Math.log(k));
+  return `${(bytes / Math.pow(k, i)).toFixed(1)} ${sizes[i]}`;
+}
+
+// Format date
+function formatDate(dateStr?: string): string {
+  if (!dateStr) return '';
+  return new Date(dateStr).toLocaleString('en-US', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+    hour: 'numeric',
+    minute: '2-digit'
+  });
+}
+
+// Build breadcrumb path
+const pathParts = relativePath.split('/');
+const fileName = pathParts[pathParts.length - 1];
+
+const downloadUrl = `/source/${date}/${relativePath}`;
+---
+
+<header class="artifact-header">
+  <nav class="artifact-header__breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li>
+        <a href="/daily">Daily Reports</a>
+      </li>
+      <li>
+        <a href={`/daily/${date}`}>{date}</a>
+      </li>
+      {pathParts.map((part, index) => {
+        const isLast = index === pathParts.length - 1;
+        const path = pathParts.slice(0, index + 1).join('/');
+        return (
+          <li>
+            {isLast ? (
+              <span class="artifact-header__breadcrumbs-current">{part}</span>
+            ) : (
+              <a href={`/daily/${date}/source/${encodeURIComponent(path)}`}>{part}</a>
+            )}
+          </li>
+        );
+      })}
+    </ol>
+  </nav>
+
+  <div class="artifact-header__content">
+    <div class="artifact-header__info">
+      <h1 class="artifact-header__title">{fileName}</h1>
+
+      <div class="artifact-header__metadata">
+        <span class="metadata-chip metadata-chip--type">
+          {artifactType.replace(/_/g, ' ')}
+        </span>
+        {displayGroup && (
+          <span class="metadata-chip metadata-chip--group">
+            {displayGroup}
+          </span>
+        )}
+        <span class="metadata-chip">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
+          </svg>
+          {formatBytes(sizeBytes)}
+        </span>
+        <span class="metadata-chip" title={`Checksum: ${checksum}`}>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+          {checksum.substring(0, 8)}
+        </span>
+        {createdAt && (
+          <span class="metadata-chip">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+            {formatDate(createdAt)}
+          </span>
+        )}
+      </div>
+    </div>
+
+    <div class="artifact-header__actions">
+      <a href={downloadUrl} download={fileName} class="action-button action-button--download">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/>
+          <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+        <span>Download</span>
+      </a>
+
+      <button class="action-button action-button--share" data-share-url={`/daily/${date}/source/${encodeURIComponent(relativePath)}`}>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="18" cy="5" r="3"/>
+          <circle cx="6" cy="12" r="3"/>
+          <circle cx="18" cy="19" r="3"/>
+          <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+          <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+        </svg>
+        <span>Share</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<style>
+  .artifact-header {
+    background: var(--color-surface, #1a1a1a);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .artifact-header__breadcrumbs {
+    padding: 0.75rem 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .artifact-header__breadcrumbs ol {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0.875rem;
+    font-family: ui-monospace, monospace;
+  }
+
+  .artifact-header__breadcrumbs li:not(:last-child)::after {
+    content: '/';
+    margin-left: 0.5rem;
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+  .artifact-header__breadcrumbs a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .artifact-header__breadcrumbs a:hover {
+    color: #8b5cf6;
+  }
+
+  .artifact-header__breadcrumbs-current {
+    color: #fff;
+    font-weight: 500;
+  }
+
+  .artifact-header__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .artifact-header__info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .artifact-header__title {
+    margin: 0 0 0.75rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: ui-monospace, monospace;
+    color: #fff;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .artifact-header__metadata {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .metadata-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.25rem 0.625rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 0.375rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.75rem;
+    font-family: ui-monospace, monospace;
+    text-transform: capitalize;
+  }
+
+  .metadata-chip svg {
+    opacity: 0.7;
+  }
+
+  .metadata-chip--type {
+    background: rgba(139, 92, 246, 0.2);
+    color: #c4b5fd;
+    font-weight: 500;
+  }
+
+  .metadata-chip--group {
+    background: rgba(59, 130, 246, 0.2);
+    color: #93c5fd;
+  }
+
+  .artifact-header__actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .action-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+  }
+
+  .action-button:hover {
+    background: rgba(139, 92, 246, 0.2);
+    border-color: #8b5cf6;
+  }
+
+  .action-button--download {
+    background: rgba(139, 92, 246, 0.1);
+    border-color: rgba(139, 92, 246, 0.3);
+  }
+
+  .action-button:focus-visible {
+    outline: 2px solid #8b5cf6;
+    outline-offset: 2px;
+  }
+
+  @media (max-width: 768px) {
+    .artifact-header__content {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .artifact-header__actions {
+      width: 100%;
+    }
+
+    .action-button {
+      flex: 1;
+    }
+
+    .action-button span {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  // Share button functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const shareButtons = document.querySelectorAll('.action-button--share');
+
+    shareButtons.forEach(button => {
+      button.addEventListener('click', async () => {
+        const url = button.getAttribute('data-share-url');
+        const fullUrl = `${window.location.origin}${url}`;
+
+        try {
+          if (navigator.share) {
+            await navigator.share({
+              title: 'Source File',
+              url: fullUrl
+            });
+          } else {
+            // Fallback: copy to clipboard
+            await navigator.clipboard.writeText(fullUrl);
+
+            // Show feedback
+            const originalText = button.innerHTML;
+            button.innerHTML = `
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              <span>Copied!</span>
+            `;
+
+            setTimeout(() => {
+              button.innerHTML = originalText;
+            }, 2000);
+          }
+        } catch (err) {
+          console.error('Failed to share:', err);
+        }
+      });
+    });
+  });
+</script>

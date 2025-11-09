@@ -11,8 +11,10 @@ import { fileURLToPath } from 'url';
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 const PROJECT_ROOT = resolve(__dirname, '../..');
 const PUBLISHING_DIR = join(PROJECT_ROOT, 'data/publishing');
+const SOURCE_MANIFESTS_DIR = join(PROJECT_ROOT, 'data/publishing/source_manifests');
 const CONTENT_DIR = join(__dirname, '../src/content/dashboards');
 const DATA_DIR = join(__dirname, '../src/data');
+const SOURCE_MANIFESTS_DATA_DIR = join(DATA_DIR, 'source-manifests');
 
 console.log('📦 Starting content ingestion...');
 
@@ -211,12 +213,72 @@ ${payload.raw_markdown || ''}
   return { count: processed, tags: allTags, stats };
 }
 
+async function ingestSourceManifests() {
+  await ensureDir(SOURCE_MANIFESTS_DATA_DIR);
+
+  // Read all manifest JSON files
+  let files;
+  try {
+    files = await readdir(SOURCE_MANIFESTS_DIR);
+  } catch (err) {
+    console.log('⚠️  No source manifests directory found, skipping source ingestion...');
+    return { count: 0 };
+  }
+
+  const manifestFiles = files.filter(f => f.endsWith('.json'));
+
+  if (manifestFiles.length === 0) {
+    console.log('⚠️  No source manifests found in data/publishing/source_manifests/');
+    return { count: 0 };
+  }
+
+  let processed = 0;
+  const manifestIndex = {};
+
+  for (const file of manifestFiles) {
+    const filePath = join(SOURCE_MANIFESTS_DIR, file);
+    const content = await readFile(filePath, 'utf-8');
+    const manifest = JSON.parse(content);
+
+    // Store manifest in data directory for easy access from Astro components
+    const outputFile = join(SOURCE_MANIFESTS_DATA_DIR, file);
+    await writeFile(outputFile, JSON.stringify(manifest, null, 2), 'utf-8');
+
+    // Add to index
+    manifestIndex[manifest.date] = {
+      date: manifest.date,
+      artifactCount: manifest.stats.artifactCount,
+      byteSize: manifest.stats.byteSize,
+      types: manifest.stats.types,
+      generatedAt: manifest.generatedAt
+    };
+
+    processed++;
+  }
+
+  // Write manifest index for quick lookups
+  await writeFile(
+    join(DATA_DIR, 'source-manifest-index.json'),
+    JSON.stringify(manifestIndex, null, 2),
+    'utf-8'
+  );
+
+  return { count: processed, index: manifestIndex };
+}
+
 try {
-  const result = await ingestDashboards();
-  console.log(`✅ Ingestion complete: ${result.count} dashboards processed`);
-  console.log(`🏷️  Extracted ${result.tags.size} unique tags`);
-  if (result.stats) {
-    console.log(`📊 Stats: ${result.stats.totalInsights} insights over ${result.stats.daysPublished} days`);
+  const dashboardResult = await ingestDashboards();
+  console.log(`✅ Dashboard ingestion complete: ${dashboardResult.count} dashboards processed`);
+  console.log(`🏷️  Extracted ${dashboardResult.tags.size} unique tags`);
+  if (dashboardResult.stats) {
+    console.log(`📊 Stats: ${dashboardResult.stats.totalInsights} insights over ${dashboardResult.stats.daysPublished} days`);
+  }
+
+  const sourceResult = await ingestSourceManifests();
+  console.log(`✅ Source manifest ingestion complete: ${sourceResult.count} manifests processed`);
+  if (sourceResult.index) {
+    const totalArtifacts = Object.values(sourceResult.index).reduce((sum, m) => sum + m.artifactCount, 0);
+    console.log(`📂 Total source artifacts: ${totalArtifacts}`);
   }
 } catch (err) {
   console.error('❌ Ingestion failed:', err.message);
