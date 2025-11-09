@@ -1,46 +1,22 @@
 [
   {
-    "name": "Developer Tools",
-    "count": 2
+    "name": "Agentic AI",
+    "count": 1
+  },
+  {
+    "name": "Hardware Advancements",
+    "count": 1
   },
   {
     "name": "NVIDIA Blackwell",
-    "count": 2
-  },
-  {
-    "name": "OpenAI",
-    "count": 2
-  },
-  {
-    "name": "Market Consolidation",
-    "count": 2
-  },
-  {
-    "name": "AI Models",
     "count": 1
   },
   {
-    "name": "AI Governance",
+    "name": "Strategic Investments",
     "count": 1
   },
   {
-    "name": "Google AI",
-    "count": 1
-  },
-  {
-    "name": "Edge AI",
-    "count": 1
-  },
-  {
-    "name": "Open Source",
-    "count": 1
-  },
-  {
-    "name": "Autonomous Agents",
-    "count": 1
-  },
-  {
-    "name": "AI Regulation",
+    "name": "Microsoft",
     "count": 1
   },
   {
@@ -48,31 +24,11 @@
     "count": 1
   },
   {
-    "name": "Compute Hardware",
+    "name": "LLM Specialization",
     "count": 1
   },
   {
-    "name": "AI Agents",
-    "count": 1
-  },
-  {
-    "name": "Compute Arms Race",
-    "count": 1
-  },
-  {
-    "name": "Regulatory Gap",
-    "count": 1
-  },
-  {
-    "name": "Google TPUs",
-    "count": 1
-  },
-  {
-    "name": "AI-Native Development",
-    "count": 1
-  },
-  {
-    "name": "Open Source AI",
+    "name": "EU AI Act",
     "count": 1
   }
 ]
