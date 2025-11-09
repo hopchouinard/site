@@ -1,14 +1,26 @@
 [
   {
+    "name": "OpenAI",
+    "count": 3
+  },
+  {
+    "name": "Developer Tools",
+    "count": 2
+  },
+  {
+    "name": "Open Source",
+    "count": 2
+  },
+  {
+    "name": "Google",
+    "count": 2
+  },
+  {
     "name": "AI Models",
     "count": 1
   },
   {
     "name": "AI Governance",
-    "count": 1
-  },
-  {
-    "name": "Developer Tools",
     "count": 1
   },
   {
@@ -20,15 +32,39 @@
     "count": 1
   },
   {
-    "name": "OpenAI",
-    "count": 1
-  },
-  {
     "name": "Edge AI",
     "count": 1
   },
   {
-    "name": "Open Source",
+    "name": "Autonomous Agents",
+    "count": 1
+  },
+  {
+    "name": "Market Consolidation",
+    "count": 1
+  },
+  {
+    "name": "AI Regulation",
+    "count": 1
+  },
+  {
+    "name": "Compute Hardware",
+    "count": 1
+  },
+  {
+    "name": "AI Agents",
+    "count": 1
+  },
+  {
+    "name": "Enterprise AI",
+    "count": 1
+  },
+  {
+    "name": "Regulation",
+    "count": 1
+  },
+  {
+    "name": "GitHub Copilot",
     "count": 1
   }
 ]
