@@ -50,17 +50,20 @@ function formatDate(dateStr?: string): string {
 const pathParts = relativePath.split('/');
 const fileName = pathParts[pathParts.length - 1];
 
-const downloadUrl = `/source/${date}/${relativePath}`;
+const downloadUrl = `/static/source/${date}/${relativePath}`;
 ---
 
 <header class="artifact-header">
   <nav class="artifact-header__breadcrumbs" aria-label="Breadcrumb">
     <ol>
       <li>
-        <a href="/daily">Daily Reports</a>
+        <a href="/">Home</a>
       </li>
       <li>
-        <a href={`/daily/${date}`}>{date}</a>
+        <a href={`/dashboards/${date}`}>{date}</a>
+      </li>
+      <li>
+        <a href={`/daily/${date}/source/`}>Source Files</a>
       </li>
       {pathParts.map((part, index) => {
         const isLast = index === pathParts.length - 1;

@@ -16,8 +16,15 @@ const { Content } = await dashboard.render();
 ---
 
 <BaseLayout title={dashboard.data.title} description={dashboard.data.summary}>
-  <div class="mb-8">
-    <a href="/" class="text-primary hover:underline mb-4 inline-block">&larr; Back to Dashboards</a>
+  <div class="mb-8 flex items-center justify-between">
+    <a href="/" class="text-primary hover:underline inline-block">&larr; Back to Dashboards</a>
+    <a href={`/daily/${dashboard.data.date}/source/`} class="view-sources-button">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+        <polyline points="13 2 13 9 20 9"></polyline>
+      </svg>
+      <span>View Research Sources</span>
+    </a>
   </div>
 
 <div class="dashboard-header">
@@ -248,5 +255,34 @@ const { Content } = await dashboard.render();
     .dashboard-title {
       font-size: var(--text-3xl);
     }
+  }
+
+  /* View Research Sources Button */
+  .view-sources-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.25rem;
+    background: rgba(139, 92, 246, 0.1);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    border-radius: 0.5rem;
+    color: #c4b5fd;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .view-sources-button:hover {
+    background: rgba(139, 92, 246, 0.2);
+    border-color: #8b5cf6;
+    color: #fff;
+  }
+
+  .view-sources-button svg {
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
   }
 </style>

@@ -1,0 +1,330 @@
+---
+/**
+ * Source view index page - Shows file tree overview for a specific date
+ * Route: /daily/[date]/source/
+ */
+import { readFile, readdir } from 'fs/promises';
+import { join } from 'path';
+import FileTree from '../../../../components/source/FileTree.astro';
+
+// Generate static paths for all dates with source manifests
+export async function getStaticPaths() {
+  const manifestsDir = join(process.cwd(), 'src/data/source-manifests');
+
+  let files;
+  try {
+    files = await readdir(manifestsDir);
+  } catch (err) {
+    console.warn('No source manifests found, skipping source index pages');
+    return [];
+  }
+
+  const manifestFiles = files.filter(f => f.endsWith('.json'));
+  const paths = [];
+
+  for (const file of manifestFiles) {
+    const manifestPath = join(manifestsDir, file);
+    const manifestContent = await readFile(manifestPath, 'utf-8');
+    const manifest = JSON.parse(manifestContent);
+
+    paths.push({
+      params: {
+        date: manifest.date
+      }
+    });
+  }
+
+  return paths;
+}
+
+const { date } = Astro.params;
+
+if (!date) {
+  return Astro.redirect('/404');
+}
+
+// Load source manifest for this date
+const manifestPath = join(process.cwd(), 'src/data/source-manifests', `${date}.json`);
+
+let manifest;
+try {
+  const manifestContent = await readFile(manifestPath, 'utf-8');
+  manifest = JSON.parse(manifestContent);
+} catch (err) {
+  console.error(`Failed to load manifest for ${date}:`, err);
+  return Astro.redirect('/404');
+}
+
+const title = `Source Files - ${date} - NeuroHelix`;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={`Source artifacts for ${date}`} />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="stylesheet" href="/src/styles/global.css" />
+</head>
+<body class="source-view">
+  <div class="source-layout">
+    <!-- Header -->
+    <header class="source-header">
+      <div class="source-header__content">
+        <div class="source-header__brand">
+          <a href="/" class="brand-link">
+            <span class="brand-icon">🧬</span>
+            <span class="brand-name">NeuroHelix</span>
+          </a>
+          <span class="source-header__divider">/</span>
+          <a href={`/dashboards/${date}`} class="source-header__date">{date}</a>
+        </div>
+        <a href={`/dashboards/${date}`} class="back-to-report-button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+          <span>Back to Report</span>
+        </a>
+      </div>
+    </header>
+
+    <div class="source-content">
+      <!-- Sidebar with file tree -->
+      <aside class="source-sidebar">
+        <div class="source-sidebar__header">
+          <h2>Source Files</h2>
+          <span class="source-sidebar__count">{manifest.stats.artifactCount} files</span>
+        </div>
+        <FileTree artifacts={manifest.artifacts} date={date} />
+      </aside>
+
+      <!-- Main content area -->
+      <main class="source-main">
+        <div class="source-welcome">
+          <div class="source-welcome__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/>
+              <polyline points="13 2 13 9 20 9"/>
+            </svg>
+          </div>
+          <h1>Source Artifacts</h1>
+          <p class="source-welcome__date">{date}</p>
+          <p class="source-welcome__description">
+            Select a file from the sidebar to view its raw content, metadata, and structure.
+          </p>
+          <div class="source-welcome__stats">
+            <div class="stat-card">
+              <div class="stat-card__value">{manifest.stats.artifactCount}</div>
+              <div class="stat-card__label">Total Files</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card__value">{(manifest.stats.byteSize / 1024).toFixed(1)} KB</div>
+              <div class="stat-card__label">Total Size</div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
+
+<style>
+  .source-layout {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--color-bg, #0a0a0a);
+  }
+
+  .source-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--color-surface, #1a1a1a);
+    border-bottom: 1px solid var(--color-sidebar-border, rgba(255, 255, 255, 0.1));
+  }
+
+  .source-header__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+  }
+
+  .source-header__brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .brand-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    transition: opacity 0.2s;
+  }
+
+  .brand-link:hover {
+    opacity: 0.8;
+  }
+
+  .brand-icon {
+    font-size: 1.5rem;
+  }
+
+  .source-header__divider {
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+  .source-header__date {
+    color: var(--color-highlight, #8b5cf6);
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    padding: 0.25rem 0.5rem;
+    background: rgba(139, 92, 246, 0.1);
+    border-radius: 0.25rem;
+    transition: background 0.2s;
+  }
+
+  .source-header__date:hover {
+    background: rgba(139, 92, 246, 0.2);
+  }
+
+  .back-to-report-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(139, 92, 246, 0.1);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    border-radius: 0.5rem;
+    color: #c4b5fd;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .back-to-report-button:hover {
+    background: rgba(139, 92, 246, 0.2);
+    border-color: #8b5cf6;
+    color: #fff;
+  }
+
+  .back-to-report-button svg {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .source-content {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+  }
+
+  .source-sidebar {
+    width: 300px;
+    background: var(--color-sidebar, #1a1a1a);
+    border-right: 1px solid var(--color-sidebar-border, rgba(255, 255, 255, 0.1));
+    overflow-y: auto;
+    flex-shrink: 0;
+  }
+
+  .source-sidebar__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .source-sidebar__header h2 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+  }
+
+  .source-sidebar__count {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-family: var(--font-mono);
+  }
+
+  .source-main {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .source-welcome {
+    text-align: center;
+    padding: 3rem;
+    max-width: 600px;
+  }
+
+  .source-welcome__icon {
+    margin: 0 auto 2rem;
+    color: rgba(139, 92, 246, 0.5);
+  }
+
+  .source-welcome h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem;
+    color: #fff;
+  }
+
+  .source-welcome__date {
+    font-family: var(--font-mono);
+    font-size: 1.125rem;
+    color: var(--color-highlight, #8b5cf6);
+    margin: 0 0 1rem;
+  }
+
+  .source-welcome__description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0 0 2rem;
+  }
+
+  .source-welcome__stats {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+
+  .stat-card {
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    min-width: 140px;
+  }
+
+  .stat-card__value {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #8b5cf6;
+    margin-bottom: 0.25rem;
+  }
+
+  .stat-card__label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgba(255, 255, 255, 0.6);
+  }
+</style>

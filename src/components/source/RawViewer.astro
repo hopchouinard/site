@@ -64,18 +64,7 @@ const language = getLanguage(mime, fileName);
     </div>
   ) : isMarkdown ? (
     <div class="raw-viewer__markdown">
-      <div class="raw-viewer__tabs">
-        <button class="raw-viewer__tab raw-viewer__tab--active" data-tab="preview">Preview</button>
-        <button class="raw-viewer__tab" data-tab="source">Source</button>
-      </div>
-      <div class="raw-viewer__content">
-        <div class="raw-viewer__pane raw-viewer__pane--active" data-pane="preview">
-          <div class="markdown-content" set:html={await import('@astrojs/markdown-remark').then(m => m.render(content))} />
-        </div>
-        <div class="raw-viewer__pane" data-pane="source">
-          <pre class="code-block"><code class="language-{language}">{content}</code></pre>
-        </div>
-      </div>
+      <pre class="code-block"><code class="language-{language}">{content}</code></pre>
     </div>
   ) : isJSON ? (
     <div class="raw-viewer__json">
@@ -135,50 +124,6 @@ const language = getLanguage(mime, fileName);
   .raw-viewer__binary p {
     margin: 0.25rem 0;
     font-size: 0.875rem;
-  }
-
-  .raw-viewer__tabs {
-    display: flex;
-    gap: 0.25rem;
-    padding: 0.75rem 1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    background: rgba(0, 0, 0, 0.2);
-  }
-
-  .raw-viewer__tab {
-    padding: 0.5rem 1rem;
-    background: transparent;
-    border: none;
-    border-bottom: 2px solid transparent;
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 0.875rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    font-family: inherit;
-  }
-
-  .raw-viewer__tab:hover {
-    color: #fff;
-    background: rgba(255, 255, 255, 0.05);
-  }
-
-  .raw-viewer__tab--active {
-    color: #8b5cf6;
-    border-bottom-color: #8b5cf6;
-  }
-
-  .raw-viewer__content {
-    position: relative;
-  }
-
-  .raw-viewer__pane {
-    display: none;
-    padding: 1.5rem;
-  }
-
-  .raw-viewer__pane--active {
-    display: block;
   }
 
   .raw-viewer__toolbar {
@@ -288,31 +233,8 @@ const language = getLanguage(mime, fileName);
 </style>
 
 <script>
-  // Tab switching for markdown viewer
+  // JSON formatting button
   document.addEventListener('DOMContentLoaded', () => {
-    const tabs = document.querySelectorAll('.raw-viewer__tab');
-    const panes = document.querySelectorAll('.raw-viewer__pane');
-
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        const target = tab.getAttribute('data-tab');
-
-        // Update tabs
-        tabs.forEach(t => t.classList.remove('raw-viewer__tab--active'));
-        tab.classList.add('raw-viewer__tab--active');
-
-        // Update panes
-        panes.forEach(p => {
-          if (p.getAttribute('data-pane') === target) {
-            p.classList.add('raw-viewer__pane--active');
-          } else {
-            p.classList.remove('raw-viewer__pane--active');
-          }
-        });
-      });
-    });
-
-    // JSON formatting button
     const formatBtn = document.querySelector('.raw-viewer__format-btn');
     if (formatBtn) {
       formatBtn.addEventListener('click', () => {

@@ -6,10 +6,11 @@
  */
 interface Props {
   currentView: 'processed' | 'source';
-  date: string;
+  currentDate: string;
 }
 
-const { currentView, date } = Astro.props;
+const { currentView, currentDate } = Astro.props;
+const date = currentDate;
 ---
 
 <div class="view-toggle" data-current-view={currentView} data-date={date}>
@@ -160,19 +161,17 @@ const { currentView, date } = Astro.props;
       // Update localStorage
       localStorage.setItem('nh:viewMode', view);
 
-      // Update URL
-      const url = new URL(window.location.href);
+      // Navigate to appropriate view
+      let targetPath: string;
 
       if (view === 'source') {
-        url.pathname = `/daily/${this.currentDate}/source/`;
-        url.searchParams.delete('view'); // Remove view param from source URL
+        targetPath = `/daily/${this.currentDate}/source/`;
       } else {
-        url.pathname = `/daily/${this.currentDate}/`;
-        url.searchParams.delete('view'); // Clean URL for processed view (default)
+        targetPath = `/dashboards/${this.currentDate}/`;
       }
 
       // Navigate to new view
-      window.location.href = url.toString();
+      window.location.href = targetPath;
     }
 
     private syncFromUrl() {
