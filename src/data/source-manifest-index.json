@@ -8,5 +8,15 @@
       "insight_draft": 1
     },
     "generatedAt": "2025-11-09T23:08:03Z"
+  },
+  "2025-11-10": {
+    "date": "2025-11-10",
+    "artifactCount": 21,
+    "byteSize": 71639,
+    "types": {
+      "other": 20,
+      "insight_draft": 1
+    },
+    "generatedAt": "2025-11-10T12:09:00Z"
   }
 }

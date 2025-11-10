@@ -1,22 +1,22 @@
 [
   {
+    "name": "AI Agents",
+    "count": 2
+  },
+  {
+    "name": "AI Regulation",
+    "count": 2
+  },
+  {
+    "name": "Developer Tools",
+    "count": 2
+  },
+  {
     "name": "GPT-5",
     "count": 1
   },
   {
-    "name": "AI Agents",
-    "count": 1
-  },
-  {
     "name": "Market Consolidation",
-    "count": 1
-  },
-  {
-    "name": "AI Regulation",
-    "count": 1
-  },
-  {
-    "name": "Developer Tools",
     "count": 1
   },
   {
@@ -29,6 +29,26 @@
   },
   {
     "name": "AI Hardware",
+    "count": 1
+  },
+  {
+    "name": "LLM Benchmarking",
+    "count": 1
+  },
+  {
+    "name": "Open-Source AI",
+    "count": 1
+  },
+  {
+    "name": "Edge AI Hardware",
+    "count": 1
+  },
+  {
+    "name": "Tech M&A",
+    "count": 1
+  },
+  {
+    "name": "Inference Costs",
     "count": 1
   }
 ]
