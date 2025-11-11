@@ -1,0 +1,438 @@
+{
+  "date": "2025-11-11",
+  "root": "data/outputs/daily/2025-11-11",
+  "generatedAt": "2025-11-11T12:08:07Z",
+  "artifacts": [
+    {
+      "relativePath": "ai_ecosystem_watch.md",
+      "artifactType": "other",
+      "displayGroup": "Other",
+      "sizeBytes": 6620,
+      "checksum": "e51cb59f99defc8b",
+      "createdAt": "2025-11-11T07:00:57Z",
+      "mime": "text/markdown",
+      "tags": [
+        "other"
+      ],
+      "toc": [
+        {
+          "text": "AI Ecosystem Watch - 2025-11-11",
+          "hash": "#ai-ecosystem-watch-2025-11-11"
+        }
+      ],
+      "preview": "---domain: AI Ecosystem Watchdate: 2025-11-11priority: high---# AI Ecosystem Watch - 2025-11-11Loaded cached credentials.Attempt 1 failed with status 429. Retrying with backoff... GaxiosError: [{ \"error\": { \"code\": 429, \"message\": \"Resource exhausted. Please try again late"
+    },
+    {
+      "relativePath": "concept_synthesizer.md",
+      "artifactType": "other",
+      "displayGroup": "Other",
+      "sizeBytes": 16441,
+      "checksum": "c42a9f0946ac8cbd",
+      "createdAt": "2025-11-11T07:04:00Z",
+      "mime": "text/markdown",
+      "tags": [
+        "other"
+      ],
+      "toc": [
+        {
+          "text": "Concept Synthesizer - 2025-11-11",
+          "hash": "#concept-synthesizer-2025-11-11"
+        }
+      ],
+      "preview": "---domain: Concept Synthesizerdate: 2025-11-11priority: high---# Concept Synthesizer - 2025-11-11Loaded cached credentials.Attempt 1 failed with status 429. Retrying with backoff... GaxiosError: [{ \"error\": { \"code\": 429, \"message\": \"Resource exhausted. Please try again la"
+    },
+    {
+      "relativePath": "continuity_builder.md",
+      "artifactType": "other",
+      "displayGroup": "Other",
+      "sizeBytes": 7893,
+      "checksum": "9116a1c8a0304549",
+      "createdAt": "2025-11-11T07:03:28Z",
+      "mime": "text/markdown",
+      "tags": [
+        "other"
+      ],
+      "toc": [
+        {
+          "text": "Continuity Builder - 2025-11-11",
+          "hash": "#continuity-builder-2025-11-11"
+        }
+      ],
+      "preview": "---domain: Continuity Builderdate: 2025-11-11priority: medium---# Continuity Builder - 2025-11-11Loaded cached credentials.Attempt 1 failed with status 429. Retrying with backoff... GaxiosError: [{ \"error\": { \"code\": 429, \"message\": \"Resource exhausted. Please try again la"
+    },
+    {
+      "relativePath": "corporate_strategy_roundup.md",
+      "artifactType": "other",
+      "displayGroup": "Other",
+      "sizeBytes": 6965,
+      "checksum": "f63fe9302fc0126e",
+      "createdAt": "2025-11-11T07:01:52Z",
+      "mime": "text/markdown",
+      "tags": [
+        "other"
+      ],
+      "toc": [
+        {
+          "text": "Corporate Strategy Roundup - 2025-11-11",
+          "hash": "#corporate-strategy-roundup-2025-11-11"
+        }
+      ],
+      "preview": "---domain: Corporate Strategy Roundupdate: 2025-11-11priority: high---# Corporate Strategy Roundup - 2025-11-11Loaded cached credentials.Attempt 1 failed with status 429. Retrying with backoff... GaxiosError: [{ \"error\": { \"code\": 429, \"message\": \"Resource exhausted. Pleas"
+    },
+    {
+      "relativePath": "cross-domain_insight.md",
+      "artifactType": "insight_draft",
+      "displayGroup": "Other",
+      "sizeBytes": 30954,
+      "checksum": "eb896567e4cb0b15",
+      "createdAt": "2025-11-11T07:04:20Z",
+      "mime": "text/markdown",
+      "tags": [
+        "insight_draft"
+      ],
+      "toc": [
+        {
+          "text": "Cross-Domain Insight - 2025-11-11",
+          "hash": "#cross-domain-insight-2025-11-11"
+        },
+        {
+          "text": "Visualization Prompt - 2025-11-11",
+          "hash": "#visualization-prompt-2025-11-11"
+        }
+      ],
+      "preview": "---domain: Cross-Domain Insightdate: 2025-11-11priority: medium---# Cross-Domain Insight - 2025-11-11Loaded cached credentials.I understand the task. I will first list the `.md` files in `data/outputs/daily/2025-11-11/` to confirm the directory structure and then proceed with rea"
+    },
+    {
+      "relativePath": "developer-tool_evolution.md",
+      "artifactType": "other",
+      "displayGroup": "Other",
+      "sizeBytes": 10577,
+      "checksum": "9d2a06a85f689474",
+      "createdAt": "2025-11-11T07:02:28Z",
+      "mime": "text/markdown",
+      "tags": [
+        "other"
+      ],
+      "toc": [
+        {
+          "text": "Developer-Tool Evolution - 2025-11-11",
+          "hash": "#developer-tool-evolution-2025-11-11"
+        },
+        {
+          "text": "GitHub Copilot",
+          "hash": "#github-copilot"
+        },
+        {
+          "text": "Claude Code",
+          "hash": "#claude-code"
+        },
+        {
+          "text": "Cursor AI",
+          "hash": "#cursor-ai"
+        }
+      ],
+      "preview": "---domain: Developer-Tool Evolutiondate: 2025-11-11priority: medium---# Developer-Tool Evolution - 2025-11-11Loaded cached credentials.Attempt 1 failed with status 429. Retrying with backoff... GaxiosError: [{ \"error\": { \"code\": 429, \"message\": \"Resource exhausted. Please "
+    },
+    {
+      "relativePath": "emergent_open-source_activity.md",
+      "artifactType": "other",
+      "displayGroup": "Other",
+      "sizeBytes": 6915,
+      "checksum": "4ff163f539a198b4",
+      "createdAt": "2025-11-11T07:00:54Z",
+      "mime": "text/markdown",
+      "tags": [
+        "other"
+      ],
+      "toc": [
+        {
+          "text": "Emergent Open-Source Activity - 2025-11-11",
+          "hash": "#emergent-open-source-activity-2025-11-11"
+        }
+      ],
+      "preview": "---domain: Emergent Open-Source Activitydate: 2025-11-11priority: medium---# Emergent Open-Source Activity - 2025-11-11Loaded cached credentials.Attempt 1 failed: You have exhausted your capacity on this model. Your quota will reset after 0s.. Retrying after 56.271624ms...Attempt"
+    },
+    {
+      "relativePath": "ethics_&_alignment.md",
+      "artifactType": "other",
+      "displayGroup": "Other",
+      "sizeBytes": 3164,
+      "checksum": "e36f32e0a6247983",
+      "createdAt": "2025-11-11T07:01:17Z",
+      "mime": "text/markdown",
+      "tags": [
+        "other"
+      ],
+      "toc": [
+        {
+          "text": "Ethics & Alignment - 2025-11-11",
+          "hash": "#ethics-alignment-2025-11-11"
+        }
+      ],
+      "preview": "---domain: Ethics & Alignmentdate: 2025-11-11priority: medium---# Ethics & Alignment - 2025-11-11Loaded cached credentials.Recent discussions from think tanks and academic institutions on AI alignment, safety, and governance highlight a growing global focus on the complex challen"
+    },
+    {
+      "relativePath": "hardware_&_compute_landscape.md",
+      "artifactType": "other",
+      "displayGroup": "Other",
+      "sizeBytes": 3841,
+      "checksum": "eff5ee97c7f2f6ab",
+      "createdAt": "2025-11-11T07:00:35Z",
+      "mime": "text/markdown",
+      "tags": [
+        "other"
+      ],
+      "toc": [
+        {
+          "text": "Hardware & Compute Landscape - 2025-11-11",
+          "hash": "#hardware-compute-landscape-2025-11-11"
+        }
+      ],
+      "preview": "---domain: Hardware & Compute Landscapedate: 2025-11-11priority: medium---# Hardware & Compute Landscape - 2025-11-11Loaded cached credentials.Recent updates in GPU, TPU, and edge AI hardware are significantly influencing LLM deployment costs, primarily by offering more efficient"
+    },
+    {
+      "relativePath": "keyword_tag_generator.md",
+      "artifactType": "other",
+      "displayGroup": "Other",
+      "sizeBytes": 11170,
+      "checksum": "a1d62a81071e3b6c",
+      "createdAt": "2025-11-11T07:05:25Z",
+      "mime": "text/markdown",
+      "tags": [
+        "other"
+      ],
+      "toc": [
+        {
+          "text": "Keyword Tag Generator - 2025-11-11",
+          "hash": "#keyword-tag-generator-2025-11-11"
+        }
+      ],
+      "preview": "---domain: Keyword Tag Generatordate: 2025-11-11priority: high---# Keyword Tag Generator - 2025-11-11Loaded cached credentials.Attempt 1 failed with status 429. Retrying with backoff... GaxiosError: [{ \"error\": { \"code\": 429, \"message\": \"Resource exhausted. Please try agai"
+    },
+    {
+      "relativePath": "market_implication_lens.md",
+      "artifactType": "other",
+      "displayGroup": "Other",
+      "sizeBytes": 5703,
+      "checksum": "7a9e2d342cdfcf28",
+      "createdAt": "2025-11-11T07:05:53Z",
+      "mime": "text/markdown",
+      "tags": [
+        "other"
+      ],
+      "toc": [
+        {
+          "text": "Market Implication Lens - 2025-11-11",
+          "hash": "#market-implication-lens-2025-11-11"
+        }
+      ],
+      "preview": "---domain: Market Implication Lensdate: 2025-11-11priority: medium---# Market Implication Lens - 2025-11-11Loaded cached credentials.Attempt 1 failed with status 429. Retrying with backoff... GaxiosError: [{ \"error\": { \"code\": 429, \"message\": \"Resource exhausted. Please tr"
+    },
+    {
+      "relativePath": "meta-project_explorer.md",
+      "artifactType": "other",
+      "displayGroup": "Other",
+      "sizeBytes": 31424,
+      "checksum": "bdb54a9e3b5ef1fa",
+      "createdAt": "2025-11-11T07:05:59Z",
+      "mime": "text/markdown",
+      "tags": [
+        "other"
+      ],
+      "toc": [
+        {
+          "text": "Meta-Project Explorer - 2025-11-11",
+          "hash": "#meta-project-explorer-2025-11-11"
+        }
+      ],
+      "preview": "---domain: Meta-Project Explorerdate: 2025-11-11priority: low---# Meta-Project Explorer - 2025-11-11Loaded cached credentials.I will analyze the recent daily and synthesized reports, along with the `searches.tsv` configuration, to identify patterns and areas for improvement. Then"
+    },
+    {
+      "relativePath": "model_comparison_digest.md",
+      "artifactType": "other",
+      "displayGroup": "Other",
+      "sizeBytes": 8427,
+      "checksum": "f538f9dcc194fc9b",
+      "createdAt": "2025-11-11T07:01:50Z",
+      "mime": "text/markdown",
+      "tags": [
+        "other"
+      ],
+      "toc": [
+        {
+          "text": "Model Comparison Digest - 2025-11-11",
+          "hash": "#model-comparison-digest-2025-11-11"
+        }
+      ],
+      "preview": "---domain: Model Comparison Digestdate: 2025-11-11priority: high---# Model Comparison Digest - 2025-11-11Loaded cached credentials.Attempt 1 failed with status 429. Retrying with backoff... GaxiosError: [{ \"error\": { \"code\": 429, \"message\": \"Resource exhausted. Please try "
+    },
+    {
+      "relativePath": "narrative_mode.md",
+      "artifactType": "other",
+      "displayGroup": "Other",
+      "sizeBytes": 1308,
+      "checksum": "d539e719df6f052a",
+      "createdAt": "2025-11-11T07:04:43Z",
+      "mime": "text/markdown",
+      "tags": [
+        "other"
+      ],
+      "toc": [
+        {
+          "text": "Narrative Mode - 2025-11-11",
+          "hash": "#narrative-mode-2025-11-11"
+        }
+      ],
+      "preview": "---domain: Narrative Modedate: 2025-11-11priority: medium---# Narrative Mode - 2025-11-11Loaded cached credentials.I need to access the research files for today's date, November 11, 2025. However, the directory `data/outputs/daily/2025-11-11/` does not appear in the provided fold"
+    },
+    {
+      "relativePath": "new-topic_detector.md",
+      "artifactType": "other",
+      "displayGroup": "Other",
+      "sizeBytes": 5880,
+      "checksum": "f7888a1c3aaa8844",
+      "createdAt": "2025-11-11T07:06:25Z",
+      "mime": "text/markdown",
+      "tags": [
+        "other"
+      ],
+      "toc": [
+        {
+          "text": "New-Topic Detector - 2025-11-11",
+          "hash": "#new-topic-detector-2025-11-11"
+        }
+      ],
+      "preview": "---domain: New-Topic Detectordate: 2025-11-11priority: low---# New-Topic Detector - 2025-11-11Loaded cached credentials.Attempt 1 failed with status 429. Retrying with backoff... GaxiosError: [{ \"error\": { \"code\": 429, \"message\": \"Resource exhausted. Please try again later"
+    },
+    {
+      "relativePath": "novelty_filter.md",
+      "artifactType": "other",
+      "displayGroup": "Other",
+      "sizeBytes": 17061,
+      "checksum": "edf874ae92e7b775",
+      "createdAt": "2025-11-11T07:03:16Z",
+      "mime": "text/markdown",
+      "tags": [
+        "other"
+      ],
+      "toc": [
+        {
+          "text": "Novelty Filter - 2025-11-11",
+          "hash": "#novelty-filter-2025-11-11"
+        },
+        {
+          "text": "Concept Synthesizer - 2025-11-10",
+          "hash": "#concept-synthesizer-2025-11-10"
+        }
+      ],
+      "preview": "---domain: Novelty Filterdate: 2025-11-11priority: high---# Novelty Filter - 2025-11-11Loaded cached credentials.Attempt 1 failed with status 429. Retrying with backoff... GaxiosError: [{ \"error\": { \"code\": 429, \"message\": \"Resource exhausted. Please try again later. Pleas"
+    },
+    {
+      "relativePath": "prompt-engineering_trends.md",
+      "artifactType": "other",
+      "displayGroup": "Other",
+      "sizeBytes": 13172,
+      "checksum": "a88672ff84d24ca4",
+      "createdAt": "2025-11-11T07:02:58Z",
+      "mime": "text/markdown",
+      "tags": [
+        "other"
+      ],
+      "toc": [
+        {
+          "text": "Prompt-Engineering Trends - 2025-11-11",
+          "hash": "#prompt-engineering-trends-2025-11-11"
+        }
+      ],
+      "preview": "---domain: Prompt-Engineering Trendsdate: 2025-11-11priority: low---# Prompt-Engineering Trends - 2025-11-11Loaded cached credentials.Attempt 1 failed with status 429. Retrying with backoff... GaxiosError: [{ \"error\": { \"code\": 429, \"message\": \"Resource exhausted. Please t"
+    },
+    {
+      "relativePath": "prompt-health_checker.md",
+      "artifactType": "other",
+      "displayGroup": "Other",
+      "sizeBytes": 13666,
+      "checksum": "5a920a9c79677283",
+      "createdAt": "2025-11-11T07:06:34Z",
+      "mime": "text/markdown",
+      "tags": [
+        "other"
+      ],
+      "toc": [
+        {
+          "text": "Prompt-Health Checker - 2025-11-11",
+          "hash": "#prompt-health-checker-2025-11-11"
+        }
+      ],
+      "preview": "---domain: Prompt-Health Checkerdate: 2025-11-11priority: low---# Prompt-Health Checker - 2025-11-11Loaded cached credentials.Attempt 1 failed with status 429. Retrying with backoff... GaxiosError: [{ \"error\": { \"code\": 429, \"message\": \"Resource exhausted. Please try again"
+    },
+    {
+      "relativePath": "startup_radar.md",
+      "artifactType": "other",
+      "displayGroup": "Other",
+      "sizeBytes": 6765,
+      "checksum": "1919933d0bc5be61",
+      "createdAt": "2025-11-11T07:01:56Z",
+      "mime": "text/markdown",
+      "tags": [
+        "other"
+      ],
+      "toc": [
+        {
+          "text": "Startup Radar - 2025-11-11",
+          "hash": "#startup-radar-2025-11-11"
+        }
+      ],
+      "preview": "---domain: Startup Radardate: 2025-11-11priority: medium---# Startup Radar - 2025-11-11Loaded cached credentials.Attempt 1 failed with status 429. Retrying with backoff... GaxiosError: [{ \"error\": { \"code\": 429, \"message\": \"Resource exhausted. Please try again later. Pleas"
+    },
+    {
+      "relativePath": "tech_regulation_pulse.md",
+      "artifactType": "other",
+      "displayGroup": "Other",
+      "sizeBytes": 3353,
+      "checksum": "470762218941f93b",
+      "createdAt": "2025-11-11T07:01:30Z",
+      "mime": "text/markdown",
+      "tags": [
+        "other"
+      ],
+      "toc": [
+        {
+          "text": "Tech Regulation Pulse - 2025-11-11",
+          "hash": "#tech-regulation-pulse-2025-11-11"
+        }
+      ],
+      "preview": "---domain: Tech Regulation Pulsedate: 2025-11-11priority: high---# Tech Regulation Pulse - 2025-11-11Loaded cached credentials.Attempt 1 failed: You have exhausted your capacity on this model. Your quota will reset after 0s.. Retrying after 56.468163000000004ms...Attempt 2 failed"
+    },
+    {
+      "relativePath": "visualization_prompt.md",
+      "artifactType": "other",
+      "displayGroup": "Other",
+      "sizeBytes": 3552,
+      "checksum": "d7ca6f7c8c0475fb",
+      "createdAt": "2025-11-11T07:04:17Z",
+      "mime": "text/markdown",
+      "tags": [
+        "other"
+      ],
+      "toc": [
+        {
+          "text": "Visualization Prompt - 2025-11-11",
+          "hash": "#visualization-prompt-2025-11-11"
+        },
+        {
+          "text": "**HTML Dashboard Section Outline: Today's Insights Summary**",
+          "hash": "#html-dashboard-section-outline-todays-insights-summary"
+        }
+      ],
+      "preview": "---domain: Visualization Promptdate: 2025-11-11priority: low---# Visualization Prompt - 2025-11-11Loaded cached credentials.Here's an outline for an HTML dashboard section summarizing today's insights:### **HTML Dashboard Section Outline: Today's Insights Summary****1. Section Ti"
+    }
+  ],
+  "stats": {
+    "artifactCount": 21,
+    "byteSize": 214851,
+    "types": {
+      "other": 20,
+      "insight_draft": 1
+    }
+  }
+}

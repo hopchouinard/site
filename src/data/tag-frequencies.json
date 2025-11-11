@@ -1,14 +1,18 @@
 [
   {
+    "name": "AI Regulation",
+    "count": 3
+  },
+  {
     "name": "AI Agents",
     "count": 2
   },
   {
-    "name": "AI Regulation",
+    "name": "Developer Tools",
     "count": 2
   },
   {
-    "name": "Developer Tools",
+    "name": "AI Hardware",
     "count": 2
   },
   {
@@ -25,10 +29,6 @@
   },
   {
     "name": "Prompt Engineering",
-    "count": 1
-  },
-  {
-    "name": "AI Hardware",
     "count": 1
   },
   {
@@ -49,6 +49,30 @@
   },
   {
     "name": "Inference Costs",
+    "count": 1
+  },
+  {
+    "name": "Agentic AI",
+    "count": 1
+  },
+  {
+    "name": "Open Source AI",
+    "count": 1
+  },
+  {
+    "name": "Google Gemini",
+    "count": 1
+  },
+  {
+    "name": "GitHub Copilot",
+    "count": 1
+  },
+  {
+    "name": "Corporate Investments",
+    "count": 1
+  },
+  {
+    "name": "Ethical AI",
     "count": 1
   }
 ]
