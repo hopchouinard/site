@@ -1,6 +1,22 @@
 [
   {
     "name": "AI Regulation",
+    "count": 5
+  },
+  {
+    "name": "Developer Tools",
+    "count": 4
+  },
+  {
+    "name": "Agentic AI",
+    "count": 4
+  },
+  {
+    "name": "Market Consolidation",
+    "count": 3
+  },
+  {
+    "name": "AI Hardware",
     "count": 3
   },
   {
@@ -8,11 +24,27 @@
     "count": 2
   },
   {
-    "name": "Developer Tools",
+    "name": "Edge AI",
     "count": 2
   },
   {
-    "name": "AI Hardware",
+    "name": "Prompt Engineering",
+    "count": 2
+  },
+  {
+    "name": "Open-Source AI",
+    "count": 2
+  },
+  {
+    "name": "LLMs",
+    "count": 2
+  },
+  {
+    "name": "AI Arms Race",
+    "count": 2
+  },
+  {
+    "name": "OpenAI",
     "count": 2
   },
   {
@@ -20,23 +52,7 @@
     "count": 1
   },
   {
-    "name": "Market Consolidation",
-    "count": 1
-  },
-  {
-    "name": "Edge AI",
-    "count": 1
-  },
-  {
-    "name": "Prompt Engineering",
-    "count": 1
-  },
-  {
     "name": "LLM Benchmarking",
-    "count": 1
-  },
-  {
-    "name": "Open-Source AI",
     "count": 1
   },
   {
@@ -49,10 +65,6 @@
   },
   {
     "name": "Inference Costs",
-    "count": 1
-  },
-  {
-    "name": "Agentic AI",
     "count": 1
   },
   {
@@ -73,6 +85,26 @@
   },
   {
     "name": "Ethical AI",
+    "count": 1
+  },
+  {
+    "name": "AI Safety",
+    "count": 1
+  },
+  {
+    "name": "Hardware & Compute",
+    "count": 1
+  },
+  {
+    "name": "Regulatory Oversight",
+    "count": 1
+  },
+  {
+    "name": "Google",
+    "count": 1
+  },
+  {
+    "name": "Hardware Innovation",
     "count": 1
   }
 ]

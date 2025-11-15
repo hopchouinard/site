@@ -1,0 +1,442 @@
+{
+  "date": "2025-11-13",
+  "root": "data/outputs/daily/2025-11-13",
+  "generatedAt": "2025-11-13T12:04:06Z",
+  "artifacts": [
+    {
+      "relativePath": "ai_ecosystem_watch.md",
+      "artifactType": "other",
+      "displayGroup": "Other",
+      "sizeBytes": 1685,
+      "checksum": "c3554e0c931a82af",
+      "createdAt": "2025-11-13T07:00:30Z",
+      "mime": "text/markdown",
+      "tags": [
+        "other"
+      ],
+      "toc": [
+        {
+          "text": "AI Ecosystem Watch - 2025-11-13",
+          "hash": "#ai-ecosystem-watch-2025-11-13"
+        }
+      ],
+      "preview": "---domain: AI Ecosystem Watchdate: 2025-11-13priority: high---# AI Ecosystem Watch - 2025-11-13Loaded cached credentials.Attempt 1 failed: You have exhausted your capacity on this model. Your quota will reset after 0s.. Retrying after 585.4546889999999ms...Here's a summary of the"
+    },
+    {
+      "relativePath": "concept_synthesizer.md",
+      "artifactType": "other",
+      "displayGroup": "Other",
+      "sizeBytes": 11433,
+      "checksum": "e86339c18c8b6df3",
+      "createdAt": "2025-11-13T07:02:02Z",
+      "mime": "text/markdown",
+      "tags": [
+        "other"
+      ],
+      "toc": [
+        {
+          "text": "Concept Synthesizer - 2025-11-13",
+          "hash": "#concept-synthesizer-2025-11-13"
+        }
+      ],
+      "preview": "---domain: Concept Synthesizerdate: 2025-11-13priority: high---# Concept Synthesizer - 2025-11-13Loaded cached credentials.I will begin by getting today's date to construct the path to the daily research findings. Then, I will read all Markdown files in that directory, synthesize"
+    },
+    {
+      "relativePath": "continuity_builder.md",
+      "artifactType": "other",
+      "displayGroup": "Other",
+      "sizeBytes": 6131,
+      "checksum": "08ccdfb3d0d0e5e7",
+      "createdAt": "2025-11-13T07:02:11Z",
+      "mime": "text/markdown",
+      "tags": [
+        "other"
+      ],
+      "toc": [
+        {
+          "text": "Continuity Builder - 2025-11-13",
+          "hash": "#continuity-builder-2025-11-13"
+        }
+      ],
+      "preview": "---domain: Continuity Builderdate: 2025-11-13priority: medium---# Continuity Builder - 2025-11-13Loaded cached credentials.The analysis of the daily reports from November 9th, 11th, and 12th, 2025, reveals a rapidly evolving AI landscape characterized by intense innovation, strat"
+    },
+    {
+      "relativePath": "corporate_strategy_roundup.md",
+      "artifactType": "other",
+      "displayGroup": "Other",
+      "sizeBytes": 3495,
+      "checksum": "b5a9644628df671f",
+      "createdAt": "2025-11-13T07:01:14Z",
+      "mime": "text/markdown",
+      "tags": [
+        "other"
+      ],
+      "toc": [
+        {
+          "text": "Corporate Strategy Roundup - 2025-11-13",
+          "hash": "#corporate-strategy-roundup-2025-11-13"
+        }
+      ],
+      "preview": "---domain: Corporate Strategy Roundupdate: 2025-11-13priority: high---# Corporate Strategy Roundup - 2025-11-13Loaded cached credentials.Here's a summary of notable partnerships, acquisitions, and strategic moves by top AI vendors from 2023 into 2025:**Microsoft:*** **Acquisition"
+    },
+    {
+      "relativePath": "cross-domain_insight.md",
+      "artifactType": "insight_draft",
+      "displayGroup": "Other",
+      "sizeBytes": 792,
+      "checksum": "03a5eb6e5368997b",
+      "createdAt": "2025-11-13T07:01:52Z",
+      "mime": "text/markdown",
+      "tags": [
+        "insight_draft"
+      ],
+      "toc": [
+        {
+          "text": "Cross-Domain Insight - 2025-11-13",
+          "hash": "#cross-domain-insight-2025-11-13"
+        }
+      ],
+      "preview": "---domain: Cross-Domain Insightdate: 2025-11-13priority: medium---# Cross-Domain Insight - 2025-11-13Loaded cached credentials.Attempt 1 failed: You have exhausted your capacity on this model. Your quota will reset after 0s.. Retrying after 310.170137ms...I need to clarify the co"
+    },
+    {
+      "relativePath": "developer-tool_evolution.md",
+      "artifactType": "other",
+      "displayGroup": "Other",
+      "sizeBytes": 4225,
+      "checksum": "d6e414b65cd5ccc9",
+      "createdAt": "2025-11-13T07:01:28Z",
+      "mime": "text/markdown",
+      "tags": [
+        "other"
+      ],
+      "toc": [
+        {
+          "text": "Developer-Tool Evolution - 2025-11-13",
+          "hash": "#developer-tool-evolution-2025-11-13"
+        }
+      ],
+      "preview": "---domain: Developer-Tool Evolutiondate: 2025-11-13priority: medium---# Developer-Tool Evolution - 2025-11-13Loaded cached credentials.Here's a summary of new features and releases for GitHub Copilot, Claude Code, and Cursor, along with general trends in AI-assisted coding enviro"
+    },
+    {
+      "relativePath": "emergent_open-source_activity.md",
+      "artifactType": "other",
+      "displayGroup": "Other",
+      "sizeBytes": 1858,
+      "checksum": "0199f7a7d8293c18",
+      "createdAt": "2025-11-13T07:00:26Z",
+      "mime": "text/markdown",
+      "tags": [
+        "other"
+      ],
+      "toc": [
+        {
+          "text": "Emergent Open-Source Activity - 2025-11-13",
+          "hash": "#emergent-open-source-activity-2025-11-13"
+        }
+      ],
+      "preview": "---domain: Emergent Open-Source Activitydate: 2025-11-13priority: medium---# Emergent Open-Source Activity - 2025-11-13Loaded cached credentials.Attempt 1 failed: You have exhausted your capacity on this model. Your quota will reset after 0s.. Retrying after 121.385957ms...Here's"
+    },
+    {
+      "relativePath": "ethics_&_alignment.md",
+      "artifactType": "other",
+      "displayGroup": "Other",
+      "sizeBytes": 3739,
+      "checksum": "27be550194d6cb30",
+      "createdAt": "2025-11-13T07:01:08Z",
+      "mime": "text/markdown",
+      "tags": [
+        "other"
+      ],
+      "toc": [
+        {
+          "text": "Ethics & Alignment - 2025-11-13",
+          "hash": "#ethics-alignment-2025-11-13"
+        }
+      ],
+      "preview": "---domain: Ethics & Alignmentdate: 2025-11-13priority: medium---# Ethics & Alignment - 2025-11-13Loaded cached credentials.Recent discussions from think tanks and academic institutions on AI alignment, safety, and governance highlight several key perspectives:**Think Tanks:*** **"
+    },
+    {
+      "relativePath": "hardware_&_compute_landscape.md",
+      "artifactType": "other",
+      "displayGroup": "Other",
+      "sizeBytes": 3633,
+      "checksum": "a59c7811407a6886",
+      "createdAt": "2025-11-13T07:00:37Z",
+      "mime": "text/markdown",
+      "tags": [
+        "other"
+      ],
+      "toc": [
+        {
+          "text": "Hardware & Compute Landscape - 2025-11-13",
+          "hash": "#hardware-compute-landscape-2025-11-13"
+        }
+      ],
+      "preview": "---domain: Hardware & Compute Landscapedate: 2025-11-13priority: medium---# Hardware & Compute Landscape - 2025-11-13Loaded cached credentials.Attempt 1 failed: You have exhausted your capacity on this model. Your quota will reset after 0s.. Retrying after 584.028804ms...Recent u"
+    },
+    {
+      "relativePath": "keyword_tag_generator.md",
+      "artifactType": "other",
+      "displayGroup": "Other",
+      "sizeBytes": 4080,
+      "checksum": "52c3ea6cbee8fb89",
+      "createdAt": "2025-11-13T07:02:57Z",
+      "mime": "text/markdown",
+      "tags": [
+        "other"
+      ],
+      "toc": [
+        {
+          "text": "Keyword Tag Generator - 2025-11-13",
+          "hash": "#keyword-tag-generator-2025-11-13"
+        }
+      ],
+      "preview": "---domain: Keyword Tag Generatordate: 2025-11-13priority: high---# Keyword Tag Generator - 2025-11-13Loaded cached credentials.Error executing tool read_file: File path '/Users/pchouinard/Dev/NeuroHelix/data/reports/daily_report_2025-11-13.md' is ignored by configured ignore patt"
+    },
+    {
+      "relativePath": "market_implication_lens.md",
+      "artifactType": "other",
+      "displayGroup": "Other",
+      "sizeBytes": 3262,
+      "checksum": "ef04bbe887e351a4",
+      "createdAt": "2025-11-13T07:02:31Z",
+      "mime": "text/markdown",
+      "tags": [
+        "other"
+      ],
+      "toc": [
+        {
+          "text": "Market Implication Lens - 2025-11-13",
+          "hash": "#market-implication-lens-2025-11-13"
+        }
+      ],
+      "preview": "---domain: Market Implication Lensdate: 2025-11-13priority: medium---# Market Implication Lens - 2025-11-13Loaded cached credentials.I will start by listing the Markdown files in the `data/outputs/daily/2025-11-13/` directory to identify the research reports for today. If the dir"
+    },
+    {
+      "relativePath": "meta-project_explorer.md",
+      "artifactType": "other",
+      "displayGroup": "Other",
+      "sizeBytes": 2506,
+      "checksum": "a11f1c110c920a5f",
+      "createdAt": "2025-11-13T07:01:57Z",
+      "mime": "text/markdown",
+      "tags": [
+        "other"
+      ],
+      "toc": [
+        {
+          "text": "Meta-Project Explorer - 2025-11-13",
+          "hash": "#meta-project-explorer-2025-11-13"
+        }
+      ],
+      "preview": "---domain: Meta-Project Explorerdate: 2025-11-13priority: low---# Meta-Project Explorer - 2025-11-13Loaded cached credentials.I will analyze the provided information, including the recent reports and current search domains, to suggest 3-5 concrete and actionable improvements acro"
+    },
+    {
+      "relativePath": "model_comparison_digest.md",
+      "artifactType": "other",
+      "displayGroup": "Other",
+      "sizeBytes": 2168,
+      "checksum": "5359d174afb9fa49",
+      "createdAt": "2025-11-13T07:01:01Z",
+      "mime": "text/markdown",
+      "tags": [
+        "other"
+      ],
+      "toc": [
+        {
+          "text": "Model Comparison Digest - 2025-11-13",
+          "hash": "#model-comparison-digest-2025-11-13"
+        }
+      ],
+      "preview": "---domain: Model Comparison Digestdate: 2025-11-13priority: high---# Model Comparison Digest - 2025-11-13Loaded cached credentials.Here's a summary of recent benchmark results and performance discussions for major AI models (Gemini, GPT, Claude, Mistral) from the last week:**Gemi"
+    },
+    {
+      "relativePath": "narrative_mode.md",
+      "artifactType": "other",
+      "displayGroup": "Other",
+      "sizeBytes": 2910,
+      "checksum": "0fa8f5551014323a",
+      "createdAt": "2025-11-13T07:02:42Z",
+      "mime": "text/markdown",
+      "tags": [
+        "other"
+      ],
+      "toc": [
+        {
+          "text": "Narrative Mode - 2025-11-13",
+          "hash": "#narrative-mode-2025-11-13"
+        }
+      ],
+      "preview": "---domain: Narrative Modedate: 2025-11-13priority: medium---# Narrative Mode - 2025-11-13Loaded cached credentials.Okay, I understand. I will read the markdown files from `data/outputs/daily/2025-11-13/`, synthesize the dominant themes, and then generate a ~200-word narrative bri"
+    },
+    {
+      "relativePath": "new-topic_detector.md",
+      "artifactType": "other",
+      "displayGroup": "Other",
+      "sizeBytes": 794,
+      "checksum": "d7f170d9997357d5",
+      "createdAt": "2025-11-13T07:03:07Z",
+      "mime": "text/markdown",
+      "tags": [
+        "other"
+      ],
+      "toc": [
+        {
+          "text": "New-Topic Detector - 2025-11-13",
+          "hash": "#new-topic-detector-2025-11-13"
+        }
+      ],
+      "preview": "---domain: New-Topic Detectordate: 2025-11-13priority: low---# New-Topic Detector - 2025-11-13Loaded cached credentials.Here are 3 new research categories worth adding to the daily loop, based on trending discussions in AI and tech:1. **Agentic AI / AI Agents:** Focus on autonomo"
+    },
+    {
+      "relativePath": "novelty_filter.md",
+      "artifactType": "other",
+      "displayGroup": "Other",
+      "sizeBytes": 666,
+      "checksum": "1f136863f32123ce",
+      "createdAt": "2025-11-13T07:01:32Z",
+      "mime": "text/markdown",
+      "tags": [
+        "other"
+      ],
+      "toc": [
+        {
+          "text": "Novelty Filter - 2025-11-13",
+          "hash": "#novelty-filter-2025-11-13"
+        }
+      ],
+      "preview": "---domain: Novelty Filterdate: 2025-11-13priority: high---# Novelty Filter - 2025-11-13Loaded cached credentials.I will begin by listing the contents of the directory `/Users/pchouinard/Dev/NeuroHelix/site/static/source/2025-11-13/` to identify today's research findings. This wil"
+    },
+    {
+      "relativePath": "prompt-engineering_trends.md",
+      "artifactType": "other",
+      "displayGroup": "Other",
+      "sizeBytes": 2877,
+      "checksum": "f99631f09af2842b",
+      "createdAt": "2025-11-13T07:01:32Z",
+      "mime": "text/markdown",
+      "tags": [
+        "other"
+      ],
+      "toc": [
+        {
+          "text": "Prompt-Engineering Trends - 2025-11-13",
+          "hash": "#prompt-engineering-trends-2025-11-13"
+        }
+      ],
+      "preview": "---domain: Prompt-Engineering Trendsdate: 2025-11-13priority: low---# Prompt-Engineering Trends - 2025-11-13Loaded cached credentials.Here's a summary of new prompt-engineering techniques and frameworks, along with leading practitioners, as of late 2024 and 2025:**New Prompt Engi"
+    },
+    {
+      "relativePath": "prompt-health_checker.md",
+      "artifactType": "other",
+      "displayGroup": "Other",
+      "sizeBytes": 1048,
+      "checksum": "d346b90e5245baaa",
+      "createdAt": "2025-11-13T07:02:44Z",
+      "mime": "text/markdown",
+      "tags": [
+        "other"
+      ],
+      "toc": [
+        {
+          "text": "Prompt-Health Checker - 2025-11-13",
+          "hash": "#prompt-health-checker-2025-11-13"
+        }
+      ],
+      "preview": "---domain: Prompt-Health Checkerdate: 2025-11-13priority: low---# Prompt-Health Checker - 2025-11-13Loaded cached credentials.I need to analyze the daily prompts for redundancy or drift. First, I'll locate the daily prompt files, likely under `site/static/source/YYYY-MM-DD/`, the"
+    },
+    {
+      "relativePath": "startup_radar.md",
+      "artifactType": "other",
+      "displayGroup": "Other",
+      "sizeBytes": 2532,
+      "checksum": "52c1eadfc9773455",
+      "createdAt": "2025-11-13T07:01:06Z",
+      "mime": "text/markdown",
+      "tags": [
+        "other"
+      ],
+      "toc": [
+        {
+          "text": "Startup Radar - 2025-11-13",
+          "hash": "#startup-radar-2025-11-13"
+        }
+      ],
+      "preview": "---domain: Startup Radardate: 2025-11-13priority: medium---# Startup Radar - 2025-11-13Loaded cached credentials.Here's a summary of emerging startups and open-source communities developing notable AI applications, particularly agentic frameworks:**Open-Source AI Agentic Framewor"
+    },
+    {
+      "relativePath": "tech_regulation_pulse.md",
+      "artifactType": "other",
+      "displayGroup": "Other",
+      "sizeBytes": 4349,
+      "checksum": "e83d13eaa1b57b18",
+      "createdAt": "2025-11-13T07:00:43Z",
+      "mime": "text/markdown",
+      "tags": [
+        "other"
+      ],
+      "toc": [
+        {
+          "text": "Tech Regulation Pulse - 2025-11-13",
+          "hash": "#tech-regulation-pulse-2025-11-13"
+        }
+      ],
+      "preview": "---domain: Tech Regulation Pulsedate: 2025-11-13priority: high---# Tech Regulation Pulse - 2025-11-13Loaded cached credentials.**Summary of AI-Related Laws and Policy Statements & Potential Business Impacts**While no entirely new AI laws or policy statements were identified as be"
+    },
+    {
+      "relativePath": "visualization_prompt.md",
+      "artifactType": "other",
+      "displayGroup": "Other",
+      "sizeBytes": 4001,
+      "checksum": "5b66ce9a9bf440ea",
+      "createdAt": "2025-11-13T07:02:13Z",
+      "mime": "text/markdown",
+      "tags": [
+        "other"
+      ],
+      "toc": [
+        {
+          "text": "Visualization Prompt - 2025-11-13",
+          "hash": "#visualization-prompt-2025-11-13"
+        },
+        {
+          "text": "Today's Insights Dashboard Section Outline",
+          "hash": "#todays-insights-dashboard-section-outline"
+        },
+        {
+          "text": "I. Section Header",
+          "hash": "#i-section-header"
+        },
+        {
+          "text": "II. Key Performance Indicators (KPIs) - \"At a Glance\" Summary",
+          "hash": "#ii-key-performance-indicators-kpis-at-a-glance-summary"
+        },
+        {
+          "text": "III. Trend Analysis - Charts & Graphs",
+          "hash": "#iii-trend-analysis-charts-graphs"
+        },
+        {
+          "text": "IV. Recent Activity / Highlights",
+          "hash": "#iv-recent-activity-highlights"
+        },
+        {
+          "text": "V. Color Palette Suggestions",
+          "hash": "#v-color-palette-suggestions"
+        },
+        {
+          "text": "VI. Technologies (Implicit)",
+          "hash": "#vi-technologies-implicit"
+        }
+      ],
+      "preview": "---domain: Visualization Promptdate: 2025-11-13priority: low---# Visualization Prompt - 2025-11-13Loaded cached credentials.Here's an outline for an HTML dashboard section summarizing today's insights:## Today's Insights Dashboard Section Outline### I. Section Header* **Title:** "
+    }
+  ],
+  "stats": {
+    "artifactCount": 21,
+    "byteSize": 68184,
+    "types": {
+      "other": 20,
+      "insight_draft": 1
+    }
+  }
+}

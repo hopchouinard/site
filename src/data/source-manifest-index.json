@@ -28,5 +28,35 @@
       "insight_draft": 1
     },
     "generatedAt": "2025-11-11T12:08:07Z"
+  },
+  "2025-11-12": {
+    "date": "2025-11-12",
+    "artifactCount": 21,
+    "byteSize": 99821,
+    "types": {
+      "other": 20,
+      "insight_draft": 1
+    },
+    "generatedAt": "2025-11-12T12:05:45Z"
+  },
+  "2025-11-13": {
+    "date": "2025-11-13",
+    "artifactCount": 21,
+    "byteSize": 68184,
+    "types": {
+      "other": 20,
+      "insight_draft": 1
+    },
+    "generatedAt": "2025-11-13T12:04:06Z"
+  },
+  "2025-11-14": {
+    "date": "2025-11-14",
+    "artifactCount": 21,
+    "byteSize": 119711,
+    "types": {
+      "other": 20,
+      "insight_draft": 1
+    },
+    "generatedAt": "2025-11-14T12:04:15Z"
   }
 }
