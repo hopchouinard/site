@@ -18,6 +18,7 @@ const PUBLISHING_DIR = join(PROJECT_ROOT, 'data/publishing');
 const SOURCE_MANIFESTS_DIR = join(PROJECT_ROOT, 'data/publishing/source_manifests');
 const STATIC_SOURCE_DIR = join(PROJECT_ROOT, 'site/static/source');
 const PUBLIC_DIR = join(__dirname, '../public');
+const DASHBOARD_FILE_REGEX = /^\d{4}-\d{2}-\d{2}\.json$/;
 
 console.log('🔍 Building search index...');
 
@@ -37,7 +38,9 @@ async function buildSearchIndex() {
     return { count: 0, size: 0 };
   }
 
-  const jsonFiles = files.filter(f => f.endsWith('.json'));
+  // Skip auxiliary JSON artifacts (tag dumps, notes, etc.) that share the
+  // publishing directory but aren't dashboard payloads.
+  const jsonFiles = files.filter(f => DASHBOARD_FILE_REGEX.test(f));
   
   if (jsonFiles.length === 0) {
     console.log('⚠️  No dashboard data found, creating empty search index');

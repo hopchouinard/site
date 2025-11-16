@@ -1,15 +1,19 @@
 [
   {
     "name": "AI Regulation",
-    "count": 5
+    "count": 6
   },
   {
     "name": "Developer Tools",
-    "count": 4
+    "count": 5
   },
   {
     "name": "Agentic AI",
-    "count": 4
+    "count": 5
+  },
+  {
+    "name": "AI Agents",
+    "count": 3
   },
   {
     "name": "Market Consolidation",
@@ -20,8 +24,12 @@
     "count": 3
   },
   {
-    "name": "AI Agents",
-    "count": 2
+    "name": "AI Arms Race",
+    "count": 3
+  },
+  {
+    "name": "OpenAI",
+    "count": 3
   },
   {
     "name": "Edge AI",
@@ -36,15 +44,23 @@
     "count": 2
   },
   {
+    "name": "Open Source AI",
+    "count": 2
+  },
+  {
     "name": "LLMs",
     "count": 2
   },
   {
-    "name": "AI Arms Race",
+    "name": "AI Safety",
     "count": 2
   },
   {
-    "name": "OpenAI",
+    "name": "Hardware & Compute",
+    "count": 2
+  },
+  {
+    "name": "Google",
     "count": 2
   },
   {
@@ -68,10 +84,6 @@
     "count": 1
   },
   {
-    "name": "Open Source AI",
-    "count": 1
-  },
-  {
     "name": "Google Gemini",
     "count": 1
   },
@@ -88,23 +100,35 @@
     "count": 1
   },
   {
-    "name": "AI Safety",
-    "count": 1
-  },
-  {
-    "name": "Hardware & Compute",
-    "count": 1
-  },
-  {
     "name": "Regulatory Oversight",
     "count": 1
   },
   {
-    "name": "Google",
+    "name": "Hardware Innovation",
     "count": 1
   },
   {
-    "name": "Hardware Innovation",
+    "name": "GPT-5.1",
+    "count": 1
+  },
+  {
+    "name": "Gemini 2.5 Pro",
+    "count": 1
+  },
+  {
+    "name": "NVIDIA Blackwell",
+    "count": 1
+  },
+  {
+    "name": "Agentic IDEs",
+    "count": 1
+  },
+  {
+    "name": "LLM Deployment Costs",
+    "count": 1
+  },
+  {
+    "name": "EU AI Act",
     "count": 1
   }
 ]

@@ -15,6 +15,7 @@ const SOURCE_MANIFESTS_DIR = join(PROJECT_ROOT, 'data/publishing/source_manifest
 const CONTENT_DIR = join(__dirname, '../src/content/dashboards');
 const DATA_DIR = join(__dirname, '../src/data');
 const SOURCE_MANIFESTS_DATA_DIR = join(DATA_DIR, 'source-manifests');
+const DASHBOARD_FILE_REGEX = /^\d{4}-\d{2}-\d{2}\.json$/;
 
 console.log('📦 Starting content ingestion...');
 
@@ -72,7 +73,9 @@ async function ingestDashboards() {
     return { count: 0, tags: new Set() };
   }
 
-  const jsonFiles = files.filter(f => f.endsWith('.json'));
+  // Only process YYYY-MM-DD.json files; other JSON artifacts (tags, etc.)
+  // coexist in data/publishing and break ingestion if parsed as dashboards.
+  const jsonFiles = files.filter(f => DASHBOARD_FILE_REGEX.test(f));
   
   if (jsonFiles.length === 0) {
     console.log('⚠️  No dashboard data found in data/publishing/');

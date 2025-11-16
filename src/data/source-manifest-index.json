@@ -58,5 +58,25 @@
       "insight_draft": 1
     },
     "generatedAt": "2025-11-14T12:04:15Z"
+  },
+  "2025-11-15": {
+    "date": "2025-11-15",
+    "artifactCount": 21,
+    "byteSize": 51790,
+    "types": {
+      "other": 20,
+      "insight_draft": 1
+    },
+    "generatedAt": "2025-11-15T12:03:51Z"
+  },
+  "2025-11-16": {
+    "date": "2025-11-16",
+    "artifactCount": 21,
+    "byteSize": 84620,
+    "types": {
+      "other": 20,
+      "insight_draft": 1
+    },
+    "generatedAt": "2025-11-16T12:05:03Z"
   }
 }
